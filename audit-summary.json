@@ -1,0 +1,50 @@
+{
+  "html_pages_checked": [
+    "about.html",
+    "auth-callback.html",
+    "faq.html",
+    "index.html",
+    "privacy.html",
+    "terms.html",
+    "update-password.html",
+    "virtual-care.html"
+  ],
+  "missing_local_references": [],
+  "broken_internal_anchors": [],
+  "duplicate_ids_by_page": {},
+  "labels_without_programmatic_association": [],
+  "public_prescription_brand_name_hits": {},
+  "javascript_syntax": {
+    "app.js": {
+      "ok": true,
+      "stderr": ""
+    },
+    "supabase-client.js": {
+      "ok": true,
+      "stderr": ""
+    },
+    "config.js": {
+      "ok": true,
+      "stderr": ""
+    }
+  },
+  "public_visuals": {
+    "hero": "Inline resolution-independent SVG; no words or brand labels; 3 unbranded pens, 4 blue tablets, 4 gold tablets.",
+    "weight_management": "High-resolution Pexels photo, text-free.",
+    "right_side_product_panel": "Removed."
+  },
+  "remaining_operator_items": [
+    "Enable Supabase leaked-password protection in Dashboard.",
+    "Publish real OCP pharmacy accreditation number, owner, address, phone, Designated Manager, and pharmacist consultation hours before live online dispensing.",
+    "Complete final legal/privacy review using the actual operating pharmacy and vendors."
+  ],
+  "supabase_backend_audit": {
+    "security": [
+      "Leaked Password Protection is still disabled in Supabase Auth and requires a Dashboard setting change."
+    ],
+    "performance": [
+      "No missing-foreign-key-index warning remains after the earlier index migration. Current performance notices are unused-index informational notices only; keep them until production traffic provides enough evidence to remove them."
+    ],
+    "storage": "Insurance-card bucket remains private with authenticated RLS and file restrictions from the previous remediation."
+  }
+}

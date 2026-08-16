@@ -1,0 +1,37 @@
+REFYLLRX LAUNCH CHECKLIST
+
+Technical fixes completed in this build:
+- app.js, supabase-client.js and config.js restored
+- Google OAuth callback preserved
+- Forgot Password UI restored
+- About and FAQ pages added
+- form label accessibility improved
+- unused heavy assets removed and logo optimized
+- private insurance-card Storage workflow implemented
+- insurance plan/carrier fields stored in protected patient_demographics
+- missing foreign-key indexes added in Supabase
+
+Operator-supplied information still required before live pharmacy services:
+1. Actual legal/accredited pharmacy name
+2. Physical pharmacy address
+3. Pharmacy telephone number
+4. Designated privacy contact/name/title and complaint process
+5. Final vendor/data-location/retention review for the Privacy Notice
+
+Supabase Dashboard setting still requiring an operator click:
+- Enable Auth > Password Security > Leaked Password Protection.
+
+Do not invent the pharmacy identity or contact information in the website.
+
+
+PUBLIC PHARMACY WEBSITE IDENTIFICATION
+Before using the site to sell/dispense drugs online, publish the real operator information required for the accredited Ontario pharmacy, including:
+- OCP accreditation number
+- pharmacy owner
+- physical pharmacy address and city/town
+- pharmacy telephone number
+- Designated Manager
+- hours a licensed pharmacist is available for consultation
+
+PUBLIC PRESCRIPTION-DRUG ADVERTISING
+Do not place named prescription-drug products beside disease/treatment benefit claims on the public homepage without appropriate regulatory review. The current build intentionally uses unbranded public illustrations instead.

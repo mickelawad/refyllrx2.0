@@ -1,0 +1,100 @@
+{
+  "scan_date": "2026-08-16",
+  "scope": "RefyllRx luxury/minimal frontend and connected Supabase project",
+  "method": "Static source review plus live Supabase schema/RLS/policy inspection and rollback-only authorization tests",
+  "remediated_findings": [
+    {
+      "severity": "high",
+      "title": "Secure-message history could be modified by authenticated patients",
+      "status": "fixed",
+      "evidence": "secure_messages UPDATE policy allowed a patient access to every message with their patient_id; UPDATE privilege has now been revoked and messages are append-only."
+    },
+    {
+      "severity": "medium",
+      "title": "Patient could modify professional credential fields on own profile",
+      "status": "fixed",
+      "evidence": "Rollback test confirmed a patient-role JWT could update licence_number/licence_college/prescriber_type. A server trigger now blocks this unless app role is super_user."
+    },
+    {
+      "severity": "high",
+      "title": "Refill and delivery request fields trusted browser-supplied medication/workflow data",
+      "status": "fixed",
+      "evidence": "Server triggers now verify medication ownership/status, derive refill drug name, and force safe initial workflow values/timestamps."
+    },
+    {
+      "severity": "medium",
+      "title": "Direct assessment inserts could bypass the assessment consent-recording workflow",
+      "status": "fixed",
+      "evidence": "Direct INSERT privilege/policy removed; assessment submission is bound to auth.uid() through a constrained RPC that writes consent records atomically."
+    },
+    {
+      "severity": "medium",
+      "title": "Submitted workflow records were overly mutable",
+      "status": "fixed",
+      "evidence": "Assessment intake, refill patient fields, and delivery patient fields are now immutable after creation."
+    },
+    {
+      "severity": "medium",
+      "title": "Browser package lacked a strict CSP/security headers and used inline auth scripts",
+      "status": "fixed",
+      "evidence": "Inline modules externalized; Netlify _headers now sets CSP, HSTS, anti-framing, nosniff, no-referrer and Permissions-Policy."
+    },
+    {
+      "severity": "availability",
+      "title": "app.js contained a module parse defect in assessment tab binding",
+      "status": "fixed",
+      "evidence": "Rewritten event-binding block now parses and imports successfully as an ES module."
+    },
+    {
+      "severity": "medium",
+      "title": "Unused legacy clinical-decision table remained writable from browser-authenticated staff sessions",
+      "status": "fixed-by-containment",
+      "evidence": "Authenticated INSERT/UPDATE/DELETE privileges and write policies on public.assessments were removed pending a scoped clinical authorization model."
+    }
+  ],
+  "residual_findings": [
+    {
+      "priority": "high",
+      "title": "Professional MFA is not enforced",
+      "recommendation": "Implement Supabase MFA challenge/enrollment and require JWT aal2 for staff/professional RLS paths."
+    },
+    {
+      "priority": "high",
+      "title": "Administrative and clinical roles are not cleanly separated",
+      "recommendation": "Do not let super_user imply prescriber. Use separate admin and clinical claims plus credential/scope checks before re-enabling clinical decision writes."
+    },
+    {
+      "priority": "medium",
+      "title": "Google/OAuth onboarding can create authenticated accounts before full demographic/registration-consent completion",
+      "recommendation": "Add a server-enforced onboarding-complete gate before clinical assessment submission."
+    },
+    {
+      "priority": "medium",
+      "title": "Session tokens are stored in localStorage using a custom implicit OAuth client",
+      "recommendation": "Longer term, use official Supabase Auth with PKCE or a server-managed HttpOnly-cookie architecture; retain strict CSP."
+    },
+    {
+      "priority": "medium",
+      "title": "Insurance-card uploads are not malware-scanned",
+      "recommendation": "Add quarantine/content inspection before staff opens uploaded documents."
+    },
+    {
+      "priority": "medium",
+      "title": "Supabase leaked-password protection is disabled",
+      "recommendation": "Enable it in Authentication password-security settings."
+    },
+    {
+      "priority": "low",
+      "title": "Authenticated SECURITY DEFINER assessment RPC triggers a Supabase advisor warning",
+      "recommendation": "Current checks make it intentional; long term move privileged implementation out of the exposed public schema or to an Edge Function."
+    }
+  ],
+  "positive_controls": [
+    "All public application tables inspected have RLS enabled.",
+    "Authorization roles are read from app_metadata, not user_metadata.",
+    "No service-role key or private database credential is present in the frontend package.",
+    "Insurance-card bucket is private, owner-folder scoped, MIME restricted and limited to 5 MB.",
+    "Dynamic database content inserted into innerHTML is HTML-escaped in the reviewed rendering paths.",
+    "OAuth and password-recovery redirects are hardcoded to the RefyllRx site rather than caller-controlled URLs."
+  ]
+}

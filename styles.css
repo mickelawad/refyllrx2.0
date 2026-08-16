@@ -1,0 +1,2444 @@
+
+:root{--navy:#102844;--blue:#2d70ea;--teal:#2aa99a;--sky:#eff6ff;--ink:#16314e;--muted:#687d94;--line:#dbe6f4;--white:#fff;--ok:#246a49;--err:#a13c3c;--shadow:0 18px 52px rgba(27,71,132,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#f8fbff;line-height:1.55}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+.wrap{width:min(1180px,calc(100% - 30px));margin:auto}header{position:sticky;top:0;z-index:60;padding:12px 0;background:rgba(248,251,255,.93);backdrop-filter:blur(18px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:8px 14px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 10px 30px rgba(34,74,128,.07)}.brandLogo img{display:block;width:132px;height:auto}.navlinks,.actions,.tabs,.heroActions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.navlink,.pill,.tab,.secondary{border:1px solid #e1eaf6;background:#f8fbff;border-radius:999px;padding:10px 15px;color:#47617d;font-weight:800}.navlink:hover,.pill:hover,.tab:hover{background:var(--sky);color:var(--blue)}.primary,.tab.active,.submit{border-color:var(--blue)!important;background:var(--blue)!important;color:#fff!important}
+.hero{padding:56px 0 26px}.heroBox{padding:58px;border-radius:38px;background:linear-gradient(135deg,#12396f,#2768df 60%,#5d9af7);color:#fff;box-shadow:0 26px 68px rgba(30,76,145,.22)}.heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}h1{font-size:clamp(3rem,6vw,5.4rem);line-height:.98;letter-spacing:-.055em;margin:12px 0 18px}h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.04em;color:var(--navy);margin:10px 0 12px}h3{color:var(--navy)}.heroBox p{font-size:1.08rem;color:rgba(255,255,255,.84)}.eyebrow,.kicker,.badge{display:inline-flex;border-radius:999px;font-weight:850}.eyebrow{padding:7px 12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1)}.kicker{padding:7px 11px;background:var(--sky);color:var(--blue);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}.badge{padding:6px 10px;background:#eaf3ff;color:var(--blue);font-size:.76rem}.cta,.submit{border:0;border-radius:999px;padding:13px 19px;font-weight:900}.cta.light{background:#fff;color:var(--blue)}.cta.glass{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff}.heroProof{display:grid;gap:12px}.proof{display:flex;gap:14px;align-items:center;background:#fff;color:var(--ink);padding:15px;border-radius:20px}.icon{width:47px;height:47px;border-radius:50%;display:grid;place-items:center;background:var(--sky);color:var(--blue);font-weight:950;flex:0 0 auto}
+section{padding:54px 0}.sectionHead{max-width:780px;margin-bottom:24px}.muted{color:var(--muted)}.serviceGrid,.trustGrid,.dashTiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card,.portalCard,.dashCard,.serviceHeroCard,.standalone{background:#fff;border:1px solid var(--line);border-radius:26px;padding:25px;box-shadow:var(--shadow)}.cardIcon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:#e8f2ff;color:var(--blue);font-weight:950;margin-bottom:16px}.card .cta{display:inline-flex;margin-top:10px;background:var(--navy);color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;counter-reset:step}.step{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px}.step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900;margin-bottom:14px}.choice{background:linear-gradient(135deg,#102844,#1c4a7e);color:#fff;border-radius:30px;padding:36px}.choice h2{color:#fff}.choice p{color:#cedae7}
+.portalGrid{display:grid;grid-template-columns:.82fr 1.18fr;gap:22px}.portalIntro{background:linear-gradient(145deg,#153b78,#2768de);color:#fff}.portalIntro h2{color:#fff}.authPanel{display:none}.authPanel.active{display:block}form{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.field{display:flex;flex-direction:column}.full{grid-column:1/-1}label{font-size:.84rem;font-weight:800;margin-bottom:6px;color:#415a74}label.check{display:flex;align-items:flex-start;gap:9px;font-weight:650}input,select,textarea{width:100%;border:1px solid #d6e2f1;background:#fbfdff;border-radius:14px;padding:12px 13px;outline:none;color:var(--ink)}input[type=checkbox]{width:auto;margin-top:4px}textarea{min-height:105px;resize:vertical}.fine{font-size:.79rem;color:var(--muted)}.textLink{border:0;background:none;color:var(--blue);font-weight:850;padding:0}.status{display:none;margin-top:14px;padding:12px 14px;border-radius:14px;font-size:.9rem}.status.show{display:block}.status.ok{background:#edf8f2;color:var(--ok)}.status.err{background:#fff0f0;color:var(--err)}.notice{border-left:4px solid var(--blue);padding:12px 14px;background:#f3f8ff;border-radius:14px}.danger{border-left-color:#bb5252;background:#fff6f6}
+.dashboard{display:none;padding:30px 0 60px}.dashboard.show{display:block}.dashTop{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:16px}.dashboardShell{display:grid;grid-template-columns:230px 1fr;gap:18px}.dashNav{align-self:start;position:sticky;top:102px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:13px;box-shadow:var(--shadow)}.dashNav button{width:100%;text-align:left;border:0;background:transparent;padding:12px 13px;border-radius:14px;color:#516a85;font-weight:800}.dashNav button.active{background:var(--sky);color:var(--blue)}.dashPanel{display:none}.dashPanel.active{display:block}.metric{padding:18px;border:1px solid var(--line);border-radius:18px;background:#fbfdff}.metric strong{font-size:1.9rem;display:block;color:var(--navy)}.records{display:grid;gap:12px;margin-top:14px}.record{border:1px solid var(--line);border-radius:18px;padding:16px;background:#fbfdff}.recordHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}.recordActions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.mini{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 10px;color:#4b647f;font-weight:800;font-size:.8rem}.messageList{display:grid;gap:10px;max-height:460px;overflow:auto}.message{border:1px solid var(--line);border-radius:17px;padding:13px;background:#fbfdff}.message.me{background:#edf5ff}.assessmentTabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.assessmentPanel{display:none}.assessmentPanel.active{display:block}.questionGroup,.complianceBlock{border:1px solid var(--line);border-radius:17px;padding:15px;background:#fbfdff}.complianceBlock{display:grid;gap:10px}
+.servicePageHero{padding:42px 0 20px}.servicePageGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}.checklist{display:grid;gap:10px;padding:0;list-style:none}.checklist li{padding-left:28px;position:relative}.checklist li:before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:950}.legalDoc{max-width:900px;margin:auto}.legalDoc h1{color:var(--navy);font-size:clamp(2.4rem,5vw,4rem)}
+footer{padding:34px 0 45px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media(max-width:940px){.heroGrid,.portalGrid,.dashboardShell,.servicePageGrid{grid-template-columns:1fr}.dashNav{position:static;display:flex;overflow:auto}.dashNav button{min-width:max-content}.serviceGrid,.trustGrid,.dashTiles,.steps{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.heroBox{padding:34px 22px}.brandLogo img{width:108px}.navlinks .navlink:not(.primary){display:none}.serviceGrid,.trustGrid,.dashTiles,.steps,form{grid-template-columns:1fr}.full{grid-column:auto}}
+
+
+/* ===== Refyll homepage redesign ===== */
+.siteHeader{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid #edf2f7;padding:0}
+.homeNav{height:92px;display:grid;grid-template-columns:220px 1fr auto;align-items:center;gap:24px}
+.homeLogo{display:flex;align-items:center;justify-content:flex-start}
+.homeLogo img{width:185px;height:78px;object-fit:contain;object-position:left center;display:block}
+.mainLinks{display:flex;justify-content:center;align-items:center;gap:30px}
+.mainLinks a{font-weight:750;color:#173653;font-size:.94rem;padding:9px 0;border-bottom:2px solid transparent}
+.mainLinks a:hover,.mainLinks a.active{color:#058d73;border-color:#0dac8a}
+.navActions{display:flex;align-items:center;gap:13px}.canada{font-size:.87rem;font-weight:700;color:#344f6b}.signin,.start{font-weight:850;border-radius:999px;padding:10px 17px}.signin{border:1px solid #aebfd2;color:#264665;background:#fff}.start{background:#059a73;color:#fff;box-shadow:0 9px 24px rgba(5,154,115,.18)}
+
+.newHero{padding:58px 0 30px;background:radial-gradient(circle at 58% 45%,rgba(233,228,255,.72),transparent 28%),linear-gradient(120deg,#fff 0%,#fbfdff 70%,#f8fbff 100%)}
+.heroLayout{display:grid;grid-template-columns:.92fr 1.03fr .72fr;gap:34px;align-items:center;min-height:520px}
+.heroText h1{font-size:clamp(3.7rem,6vw,5.9rem);letter-spacing:-.055em;line-height:.92;color:#0b2d59;margin:18px 0 18px}.heroText h1 span{color:#079a76}.heroText h3{font-size:1.23rem;line-height:1.35;margin:0 0 12px;color:#142f51;max-width:530px}.heroText>p{font-size:1rem;line-height:1.65;color:#60738a;max-width:540px}
+.licensedBadge{display:inline-flex;background:#e3f7f0;color:#087c66;border-radius:999px;padding:8px 13px;font-weight:850;font-size:.82rem}
+.heroButtons{display:flex;gap:16px;align-items:center;margin-top:26px;flex-wrap:wrap}.greenBtn,.outlineBtn{padding:13px 26px;border-radius:999px;font-weight:900}.greenBtn{background:#069c76;color:#fff;min-width:205px;text-align:center;box-shadow:0 10px 24px rgba(6,156,118,.18)}.outlineBtn{border:1.5px solid #244e78;background:#fff;color:#173b61}
+.heroTrust{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;font-size:.83rem;font-weight:750;color:#27465f}
+.productStage{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center}.productGlow{position:absolute;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,#f2efff 0%,rgba(242,239,255,.5) 56%,transparent 72%)}.productArt{position:relative;z-index:2;width:100%;max-width:520px;max-height:510px;object-fit:contain;filter:drop-shadow(0 22px 24px rgba(32,61,92,.12))}
+.productLinks{display:grid;gap:22px}.productLink{display:grid;grid-template-columns:62px 1fr 18px;gap:14px;align-items:center;background:#fff;border:1px solid #e9eef4;border-radius:22px;padding:22px;box-shadow:0 14px 34px rgba(25,61,101,.08)}.productIcon{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;color:#fff;font-size:1.7rem;font-weight:900}.mounjaro .productIcon{background:#6f2dbd}.viagra .productIcon{background:#0877d8}.productLink strong{display:block;font-size:1.17rem;color:#142f50}.mounjaro strong{color:#6c31b2}.viagra strong{color:#0874c8}.productLink small,.productLink em{display:block;margin-top:4px;color:#64768a;font-size:.87rem;font-style:normal}.productLink b{font-size:1.7rem;color:#153a67}
+.howCardSection{padding:18px 0 24px}.howCardSection .wrap{background:#fff;border:1px solid #e7edf4;border-radius:24px;box-shadow:0 12px 34px rgba(23,62,107,.06);padding:28px 34px}.sectionTitle{text-align:center}.sectionTitle h2{font-size:2rem;margin:0;color:#102e53}.sectionTitle p{color:#677a91;margin:4px 0 22px}.newSteps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.newStep{text-align:center;position:relative;padding:8px 14px}.stepNo{position:absolute;left:9%;top:34px;width:34px;height:34px;border-radius:50%;background:#079a76;color:#fff;display:grid;place-items:center;font-weight:900}.stepIcon{font-size:3.2rem;color:#0d5593;margin-bottom:8px}.newStep h3{font-size:1rem;margin:4px 0;color:#153454}.newStep p{font-size:.85rem;color:#687d93;margin:0}
+.treatmentStrip{padding:16px 0}.treatmentCards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.miniTreatment{padding:19px 22px;border-radius:19px;background:linear-gradient(145deg,#fff,#f7fbff);border:1px solid #e4edf5}.miniTreatment span{display:block;color:#65798e;font-size:.83rem}.miniTreatment strong{display:block;color:#143b63;margin-top:5px}
+.trustBarSection{padding:12px 0 18px}.trustBar{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;background:#fff;border:1px solid #e7edf4;border-radius:20px;padding:18px;box-shadow:0 8px 24px rgba(28,66,110,.04)}.trustBar span{text-align:center;font-size:.82rem;color:#26455f;font-weight:750}
+.choiceBanner{padding:12px 0 35px}.choiceInner{background:#0d3767;color:#fff;border-radius:22px;padding:20px 28px;display:flex;justify-content:space-between;align-items:center;gap:18px}.choiceInner strong{display:block;font-size:1.25rem}.choiceInner small{display:block;color:#cad8e7;margin-top:2px}.choiceInner a{background:#fff;color:#0a7f67;padding:11px 20px;border-radius:999px;font-weight:900}
+
+/* Keep secure portal visually integrated with new homepage */
+#portal{padding-top:34px}.portalGrid{scroll-margin-top:115px}
+
+@media(max-width:1050px){
+ .homeNav{grid-template-columns:170px 1fr auto}.homeLogo img{width:150px}.mainLinks{gap:16px}
+ .heroLayout{grid-template-columns:1fr 1fr}.productLinks{grid-column:1/-1;grid-template-columns:1fr 1fr}.productStage{min-height:420px}
+}
+@media(max-width:760px){
+ .homeNav{height:76px;grid-template-columns:120px 1fr}.homeLogo img{width:112px;height:60px}.mainLinks,.canada,.signin{display:none}.navActions{justify-content:flex-end}.start{font-size:.82rem;padding:9px 13px}
+ .newHero{padding-top:34px}.heroLayout{grid-template-columns:1fr}.heroText h1{font-size:3.5rem}.productStage{min-height:330px}.productArt{max-height:340px}.productLinks{grid-template-columns:1fr}
+ .newSteps,.treatmentCards,.trustBar{grid-template-columns:1fr}.newStep{padding:15px 12px}.stepNo{left:calc(50% - 75px)}
+ .choiceInner{flex-direction:column;text-align:center}
+}
+
+/* High-resolution product hero refinement */
+.productArt{
+  width:min(100%,560px)!important;
+  max-width:560px!important;
+  max-height:560px!important;
+  image-rendering:auto;
+  object-fit:contain;
+  transform:translateZ(0);
+}
+.productStage{overflow:visible!important}
+@media(max-width:1050px){
+  .productArt{width:min(88vw,500px)!important;max-height:500px!important}
+}
+@media(max-width:760px){
+  .productArt{width:min(92vw,420px)!important;max-height:420px!important}
+}
+
+/* Login feedback remains visible and readable */
+#authStatus.status.show{display:block!important;margin-top:16px!important}
+
+.googleBtn{width:100%;border:1px solid #cdd9e7;background:#fff;border-radius:999px;padding:12px 16px;font-weight:850;color:#24415f}
+.googleBtn:hover{background:#f7fafc}
+.oauthDivider{display:flex;align-items:center;gap:12px;color:#8291a3;font-size:.8rem}
+.oauthDivider:before,.oauthDivider:after{content:"";height:1px;background:#dfe7ef;flex:1}
+.neutralStage{min-height:470px}
+.neutralHeroArt{position:relative;width:min(100%,520px);min-height:430px;margin:auto;border-radius:38px;background:linear-gradient(145deg,#eef8ff,#f8fffc);border:1px solid #e0ebf5;box-shadow:0 22px 55px rgba(27,71,132,.10);display:grid;align-content:center;gap:14px;padding:55px}
+.neutralRx{font-size:6rem;line-height:1;font-weight:950;color:#123c6b}
+.neutralLeaf{position:absolute;right:55px;top:55px;width:78px;height:78px;border-radius:50%;background:#e1f7ee;color:#079a76;display:grid;place-items:center;font-size:2rem;font-weight:950}
+.neutralCard{background:#fff;border:1px solid #e2eaf3;border-radius:18px;padding:14px 16px;box-shadow:0 10px 24px rgba(25,61,101,.06)}
+.neutralCard strong,.neutralCard span{display:block}.neutralCard span{color:#728499;font-size:.85rem;margin-top:2px}
+\n/* exact mockup */
+body{background:#fff}.siteHeader{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid #edf1f6;backdrop-filter:blur(16px)}.homeNav{height:86px;display:grid;grid-template-columns:240px 1fr auto;align-items:center;gap:20px}.homeLogo img{width:190px;height:72px;object-fit:contain;object-position:left center}.mainLinks{display:flex;justify-content:center;gap:28px;align-items:center}.mainLinks a{font-size:.92rem;font-weight:800;color:#173252;border-bottom:2px solid transparent;padding:8px 0}.mainLinks a.active,.mainLinks a:hover{color:#07906e;border-color:#07906e}.navActions{display:flex;align-items:center;gap:12px}.signin{border:1px solid #b9c9da;background:#fff;border-radius:999px;padding:10px 18px;color:#15395f;font-weight:850}.start{background:#07956f;color:#fff;border-radius:999px;padding:11px 20px;font-weight:900}.canada{font-size:.86rem;font-weight:750;color:#29445f}
+.mockHero{padding:42px 0 20px}.mockGrid{display:grid;grid-template-columns:.95fr 1.08fr .78fr;gap:28px;align-items:center;min-height:510px}.mockCopy h1{font-size:clamp(3.8rem,6vw,5.9rem);line-height:.92;letter-spacing:-.055em;color:#0c2d5f;margin:20px 0 18px}.mockCopy h1 span{color:#07976f}.mockCopy h3{font-size:1.2rem;line-height:1.35;color:#163253;margin:0 0 14px}.mockCopy>p{max-width:500px;color:#5f738a;font-size:1rem;line-height:1.65}.mockProducts{display:flex;align-items:center;justify-content:center;background:#fff}.mockProducts img{width:100%;max-width:620px;height:auto;display:block;object-fit:contain}.licensedBadge{display:inline-flex;background:#e5f6ef;color:#087d62;padding:8px 13px;border-radius:999px;font-size:.82rem;font-weight:850}
+.authDropCard{background:#fff;border:1px solid #e8edf4;border-radius:25px;padding:18px 20px 22px;box-shadow:0 20px 52px rgba(28,67,110,.11);align-self:start}.authRoleTabs{display:grid;grid-template-columns:1fr 1fr;background:#f7f9fc;border-radius:999px;padding:3px;margin-bottom:18px}.authRole{border:0;background:transparent;border-radius:999px;padding:10px 12px;font-weight:850;color:#1f3b5f}.authRole.active{background:#07956f;color:#fff}.dropPanel{display:none}.dropPanel.active{display:block}.dropPanel h2{text-align:center;font-size:1.65rem;margin:8px 0 0}.dropPanel>p{text-align:center;color:#62758b;margin:2px 0 16px;font-size:.86rem}.dropPanel form{grid-template-columns:1fr}.dropPanel .submit{width:100%}.forgotRow{text-align:left}.googleBtn{width:100%;border:1px solid #c9d5e2;background:#fff;border-radius:999px;padding:11px 14px;font-weight:850;color:#183759}.accountPrompt{text-align:center!important;margin:18px 0 0!important}.accountPrompt a{color:#078760;font-weight:850;text-decoration:underline}.oauthDivider{display:flex;align-items:center;gap:12px;margin:14px 0;color:#718398;font-size:.8rem}.oauthDivider:before,.oauthDivider:after{content:"";height:1px;background:#dfe7ef;flex:1}
+@media(min-width:1001px){.authDropCard{opacity:0;pointer-events:none;transform:translateY(-12px);position:absolute;right:calc((100vw - min(1180px,calc(100vw - 30px)))/2);top:98px;width:360px;z-index:90}.authDropCard.open{opacity:1;pointer-events:auto;transform:translateY(0)}}
+.heroButtons{display:flex;gap:16px;flex-wrap:wrap;margin-top:25px}.greenBtn,.outlineBtn{padding:13px 25px;border-radius:999px;font-weight:900}.greenBtn{background:#07966f;color:#fff;min-width:205px;text-align:center}.outlineBtn{border:1.5px solid #214c77;background:#fff;color:#17395f}.heroTrust{display:flex;gap:22px;flex-wrap:wrap;margin-top:25px;font-size:.82rem;color:#25445e;font-weight:750}
+.howExact{padding:12px 0}.howPanel{border:1px solid #e8edf4;border-radius:24px;padding:18px 28px 22px;box-shadow:0 10px 30px rgba(31,72,118,.05)}.sectionTitle{text-align:center}.sectionTitle h2{font-size:1.7rem;margin:0;color:#12345a}.sectionTitle p{margin:2px 0 18px;color:#697d92;font-size:.86rem}.newSteps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.newStep{text-align:center;position:relative;padding:8px 12px}.stepNo{position:absolute;left:8%;top:24px;width:34px;height:34px;border-radius:50%;background:#078e69;color:#fff;display:grid;place-items:center;font-weight:900}.stepIcon{font-size:3rem;color:#0f5595}.newStep h3{font-size:.95rem;margin:6px 0;color:#143555}.newStep p{font-size:.82rem;color:#687d91;margin:0}
+.insuranceExact{padding:0 0 28px}.insurancePanel{border:1px solid #e8edf4;border-radius:24px;padding:20px 24px;display:grid;grid-template-columns:.8fr 54px 1.5fr;gap:24px;align-items:center;box-shadow:0 10px 30px rgba(31,72,118,.04)}.insuranceIntro h3,.insuranceFields h3{margin:0;color:#143759}.insuranceIntro p,.insuranceFields p{color:#64778c;font-size:.84rem;margin:3px 0 14px}.uploadBox{border:1.5px dashed #9eb8d0;border-radius:18px;padding:22px;display:grid;place-items:center;text-align:center;cursor:pointer;background:#fbfdff}.uploadBox strong,.uploadBox small{display:block}.uploadIcon{font-size:1.8rem}.uploadBox small{color:#6f8195;margin-top:3px}.orDivider{width:42px;height:42px;border-radius:50%;border:1px solid #d9e2ec;display:grid;place-items:center;font-size:.75rem;font-weight:900;color:#49627d}.insuranceGrid{display:grid;grid-template-columns:1.15fr 1fr 1fr 1fr;gap:10px}.insuranceNote{margin-top:12px;background:#eaf8f2;color:#12765f;padding:11px 13px;border-radius:13px;font-size:.8rem}.createAccountSection{padding:20px 0 55px;background:#f8fbff}.createAccountCard{max-width:900px;margin:auto}
+@media(max-width:1000px){.homeNav{grid-template-columns:150px 1fr auto}.homeLogo img{width:135px}.mainLinks{display:none}.mockGrid{grid-template-columns:1fr 1fr}.authDropCard{grid-column:1/-1;max-width:520px;width:100%;margin:0 auto}.insurancePanel{grid-template-columns:1fr}.orDivider{margin:auto}.insuranceGrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:700px){.canada,.signin{display:none}.homeNav{grid-template-columns:110px 1fr}.navActions{justify-content:flex-end}.start{font-size:.82rem;padding:9px 13px}.homeLogo img{width:105px}.mockGrid{grid-template-columns:1fr}.mockCopy h1{font-size:3.5rem}.newSteps,.insuranceGrid{grid-template-columns:1fr}}
+
+/* ===== Desktop balance refinement ===== */
+.mockGrid{
+  grid-template-columns:minmax(0,1fr) minmax(420px,1.08fr) minmax(280px,.72fr)!important;
+  gap:34px!important;
+  align-items:center!important;
+}
+.mockProducts{
+  min-height:500px;
+  padding:10px 0;
+}
+.mockProducts img{
+  width:min(100%,650px)!important;
+  max-width:650px!important;
+}
+.desktopValuePanel{
+  display:grid;
+  gap:14px;
+  align-self:center;
+}
+.valueCard{
+  display:grid;
+  grid-template-columns:52px 1fr;
+  gap:14px;
+  align-items:center;
+  padding:18px;
+  background:#fff;
+  border:1px solid #e5edf5;
+  border-radius:20px;
+  box-shadow:0 12px 30px rgba(25,61,101,.07);
+}
+.valueIcon{
+  width:48px;height:48px;border-radius:14px;background:#e8f7f1;color:#078d69;
+  display:grid;place-items:center;font-weight:950;font-size:1.15rem
+}
+.valueCard strong{display:block;color:#153858;font-size:1rem}
+.valueCard small{display:block;color:#6d7f92;margin-top:3px;line-height:1.35}
+.pharmacyChoiceMini{
+  padding:20px;border-radius:22px;background:linear-gradient(145deg,#0d3767,#154c85);
+  color:#fff;box-shadow:0 16px 34px rgba(13,55,103,.16)
+}
+.pharmacyChoiceMini span{
+  display:block;color:#bcd2e8;font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;font-weight:850
+}
+.pharmacyChoiceMini strong{display:block;font-size:1.08rem;margin:5px 0 12px;line-height:1.35}
+.pharmacyChoiceMini a{
+  display:inline-flex;padding:9px 13px;border-radius:999px;background:#fff;color:#0d6f5a;
+  font-size:.82rem;font-weight:900
+}
+@media(min-width:1001px){
+  .authDropCard{
+    right:calc((100vw - min(1180px,calc(100vw - 30px)))/2)!important;
+    top:96px!important;width:370px!important
+  }
+  .mockGrid:after{display:none!important}
+}
+@media(min-width:1280px){
+  .wrap{width:min(1240px,calc(100% - 48px))}
+  .mockHero{padding-top:52px}
+}
+@media(max-width:1000px){
+  .desktopValuePanel{grid-column:1/-1;grid-template-columns:repeat(2,1fr)}
+  .pharmacyChoiceMini{grid-column:1/-1}
+}
+@media(max-width:700px){
+  .desktopValuePanel{grid-template-columns:1fr}
+  .mockProducts{min-height:auto}
+}
+
+/* ===== Homepage visual fill + signup insurance refinement ===== */
+.careIllustrationCard{
+  position:relative;overflow:hidden;border-radius:24px;border:1px solid #e2eaf3;
+  min-height:220px;background:#eef7fb;box-shadow:0 14px 34px rgba(20,61,104,.09)
+}
+.careIllustrationCard img{width:100%;height:220px;object-fit:cover;display:block}
+.careOverlay{
+  position:absolute;left:14px;right:14px;bottom:14px;padding:13px 15px;border-radius:16px;
+  background:rgba(255,255,255,.93);backdrop-filter:blur(8px);box-shadow:0 8px 22px rgba(17,52,87,.08)
+}
+.careOverlay span{display:block;color:#078a68;text-transform:uppercase;letter-spacing:.04em;font-size:.7rem;font-weight:900}
+.careOverlay strong{display:block;color:#15385c;line-height:1.28;margin-top:3px}
+.valueMiniGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.valueCard.compact{grid-template-columns:42px 1fr;padding:13px;border-radius:17px;box-shadow:0 8px 22px rgba(25,61,101,.055)}
+.valueCard.compact .valueIcon{width:40px;height:40px;border-radius:12px;font-size:.95rem}
+.valueCard.compact strong{font-size:.88rem}.valueCard.compact small{font-size:.74rem}
+
+.homeTrustRibbon{padding:4px 0 18px}
+.trustRibbonInner{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff;border:1px solid #e5edf4;
+  border-radius:20px;box-shadow:0 10px 30px rgba(24,64,107,.05);overflow:hidden
+}
+.trustRibbonInner>div{display:grid;grid-template-columns:38px 1fr;column-gap:10px;padding:16px 20px;border-right:1px solid #e8eef4}
+.trustRibbonInner>div:last-child{border-right:0}
+.trustRibbonInner>div>span{grid-row:1/3;font-size:1.35rem;align-self:center}
+.trustRibbonInner strong{font-size:.85rem;color:#183a59}.trustRibbonInner small{font-size:.72rem;color:#718297;margin-top:2px}
+
+.homeCarePaths{padding:18px 0 34px;background:linear-gradient(180deg,#fff,#f7fbff)}
+.carePathGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.carePathCard{
+  display:grid;grid-template-columns:66px 1fr 24px;align-items:center;gap:14px;padding:20px;
+  border-radius:22px;border:1px solid #e2ebf4;box-shadow:0 12px 28px rgba(25,61,101,.055)
+}
+.greenPath{background:linear-gradient(145deg,#edfbf5,#fff)}.bluePath{background:linear-gradient(145deg,#edf7ff,#fff)}.navyPath{background:linear-gradient(145deg,#eef2fa,#fff)}
+.carePathArt{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:1.8rem;font-weight:950;background:#fff;color:#0b5f88;box-shadow:0 6px 18px rgba(15,73,117,.08)}
+.carePathCard span{display:block;text-transform:uppercase;font-size:.69rem;letter-spacing:.045em;color:#718398;font-weight:850}
+.carePathCard strong{display:block;color:#153759;margin:3px 0;font-size:1.03rem}.carePathCard small{color:#718397}.carePathCard b{font-size:1.4rem;color:#0b8e6c}
+
+.signupInsuranceBox{margin-top:10px;padding:20px;border:1px solid #e0e9f2;border-radius:20px;background:#f9fcff}
+.signupSectionTitle>div{display:grid;grid-template-columns:42px 1fr;column-gap:10px;align-items:center}
+.signupSectionIcon{grid-row:1/3;width:38px;height:38px;border-radius:12px;background:#e5f7ef;display:grid;place-items:center}
+.signupSectionTitle strong{color:#15395a;font-size:1rem}.signupSectionTitle small{color:#708196;font-size:.78rem}
+.signupInsuranceGrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;margin-top:16px;align-items:stretch}
+.signupUploadCard{border:1.5px dashed #9eb6ce;border-radius:17px;background:#fff;display:grid;place-items:center;text-align:center;padding:20px;cursor:pointer;min-height:150px}
+.signupUploadCard .uploadIcon{font-size:1.8rem}.signupUploadCard strong{display:block;color:#173b5d}.signupUploadCard small{display:block;color:#708196;margin-top:4px}
+.signupInsuranceManual{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-content:center}
+.insuranceSignupNote{margin:12px 0 0!important}
+
+@media(min-width:1280px){
+  .mockGrid{grid-template-columns:minmax(0,.96fr) minmax(440px,1.12fr) minmax(320px,.78fr)!important}
+}
+@media(max-width:1000px){
+  .trustRibbonInner{grid-template-columns:repeat(2,1fr)}.trustRibbonInner>div:nth-child(2){border-right:0}
+  .carePathGrid{grid-template-columns:1fr}.signupInsuranceGrid{grid-template-columns:1fr}.signupInsuranceManual{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:700px){
+  .valueMiniGrid,.trustRibbonInner,.signupInsuranceManual{grid-template-columns:1fr}
+  .trustRibbonInner>div{border-right:0;border-bottom:1px solid #e8eef4}.trustRibbonInner>div:last-child{border-bottom:0}
+  .careIllustrationCard{display:none}
+}
+
+/* 2026-08-16 product artwork cleanup */
+.mockProducts{background:#fff!important;border:0!important;box-shadow:none!important}
+.mockProducts img{
+  background:#fff!important;
+  mix-blend-mode:normal!important;
+  object-fit:contain!important;
+  filter:none!important;
+}
+
+
+/* 2026-08-16 weight-management visual refresh */
+.imagePathCard{
+  padding:0!important;
+  overflow:hidden;
+  border-radius:22px;
+}
+.imagePathCard .carePathImageWrap{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:stretch;
+  min-height:180px;
+  width:100%;
+}
+.imagePathCard .carePathCopy{
+  padding:24px 22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.imagePathCard .carePathCopy span{
+  display:block;
+  text-transform:uppercase;
+  font-size:.69rem;
+  letter-spacing:.045em;
+  color:#e9fff7;
+  font-weight:850;
+}
+.imagePathCard .carePathCopy strong{
+  display:block;
+  color:#fff;
+  margin:4px 0 6px;
+  font-size:1.1rem;
+}
+.imagePathCard .carePathCopy small{
+  color:rgba(255,255,255,.9);
+  line-height:1.45;
+}
+.imagePathCard .carePathCopy em{
+  margin-top:14px;
+  font-style:normal;
+  color:#fff;
+  font-weight:900;
+}
+.imagePathCard img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.servicePageGridEnhanced{
+  grid-template-columns:1fr .95fr .78fr;
+  gap:24px;
+  align-items:center;
+}
+.serviceHeroCopy{
+  min-width:0;
+}
+.serviceHeroImageCard{
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff;
+  box-shadow:0 12px 30px rgba(34,74,128,.08);
+}
+.serviceHeroImageCard img{
+  width:100%;
+  display:block;
+  height:100%;
+  object-fit:cover;
+}
+@media(max-width:1000px){
+  .imagePathCard .carePathImageWrap{
+    grid-template-columns:1fr;
+  }
+  .servicePageGridEnhanced{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== 2026-08-16 final visual polish ===== */
+:root{
+  --premium-shadow:0 22px 60px rgba(21,57,95,.10);
+  --soft-shadow:0 10px 30px rgba(21,57,95,.065);
+}
+body{
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 46%,#f7fbff 100%);
+}
+.siteHeader{
+  box-shadow:0 1px 0 rgba(13,54,92,.04);
+}
+.homeNav{
+  height:82px!important;
+}
+.homeLogo img{
+  width:176px!important;
+  height:68px!important;
+}
+.mainLinks a{
+  transition:color .18s ease,border-color .18s ease,transform .18s ease;
+}
+.mainLinks a:hover{
+  transform:translateY(-1px);
+}
+.navActions .start,.navActions .signin{
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.navActions .start:hover,.navActions .signin:hover{
+  transform:translateY(-1px);
+}
+.navActions .start{
+  box-shadow:0 8px 22px rgba(7,149,111,.18);
+}
+
+/* Hero */
+.mockHero{
+  padding:50px 0 26px!important;
+  background:
+    radial-gradient(circle at 48% 40%,rgba(235,242,255,.62),transparent 32%),
+    linear-gradient(180deg,#fff,#fbfdff);
+}
+.mockGrid{
+  min-height:555px!important;
+  gap:38px!important;
+}
+.mockCopy{
+  padding:12px 0;
+}
+.mockCopy h1{
+  font-size:clamp(3.8rem,5.8vw,5.65rem)!important;
+  max-width:570px;
+}
+.mockCopy h3{
+  max-width:520px;
+}
+.mockCopy>p{
+  max-width:510px!important;
+}
+.licensedBadge{
+  box-shadow:inset 0 0 0 1px rgba(7,143,105,.06);
+}
+.greenBtn{
+  box-shadow:0 10px 26px rgba(7,150,111,.20);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.greenBtn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px rgba(7,150,111,.24);
+}
+.outlineBtn{
+  transition:transform .18s ease,background .18s ease;
+}
+.outlineBtn:hover{
+  transform:translateY(-2px);
+  background:#f7fbff;
+}
+.heroTrust{
+  margin-top:28px!important;
+  padding-top:18px;
+  border-top:1px solid #edf2f7;
+  max-width:540px;
+}
+.mockProducts{
+  min-height:520px!important;
+  overflow:visible!important;
+  position:relative;
+}
+.mockProducts:before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(232,240,255,.72),rgba(248,251,255,.1) 68%,transparent 72%);
+  z-index:0;
+}
+.mockProducts img{
+  position:relative;
+  z-index:1;
+  width:min(100%,680px)!important;
+  max-width:680px!important;
+  filter:drop-shadow(0 24px 24px rgba(20,53,91,.10))!important;
+}
+
+/* Right rail */
+.desktopValuePanel{
+  gap:12px!important;
+}
+.careIllustrationCard{
+  min-height:230px!important;
+  box-shadow:var(--premium-shadow)!important;
+}
+.careIllustrationCard img{
+  height:230px!important;
+}
+.careOverlay{
+  left:16px!important;
+  right:16px!important;
+  bottom:16px!important;
+}
+.valueMiniGrid{
+  gap:10px!important;
+}
+.valueCard.compact{
+  min-height:102px;
+  border-color:#e7edf4!important;
+}
+.valueCard.compact:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(21,57,95,.09)!important;
+}
+.valueCard.compact{
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.pharmacyChoiceMini{
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 18px 38px rgba(13,55,103,.17)!important;
+}
+
+/* Trust ribbon */
+.homeTrustRibbon{
+  padding:0 0 24px!important;
+}
+.trustRibbonInner{
+  box-shadow:var(--soft-shadow)!important;
+}
+.trustRibbonInner>div{
+  min-height:76px;
+  align-content:center;
+}
+
+/* How it works */
+.howExact{
+  padding:8px 0 24px!important;
+}
+.howPanel{
+  padding:28px 30px 30px!important;
+  box-shadow:var(--soft-shadow)!important;
+}
+.sectionTitle h2{
+  letter-spacing:-.03em;
+}
+.newSteps{
+  gap:8px!important;
+}
+.newStep{
+  border-radius:18px;
+  padding:14px 12px 12px!important;
+  transition:background .18s ease,transform .18s ease;
+}
+.newStep:hover{
+  background:#f8fbff;
+  transform:translateY(-2px);
+}
+.stepIcon{
+  margin-top:4px;
+}
+
+/* Care pathways */
+.homeCarePaths{
+  padding:30px 0 46px!important;
+}
+.carePathGrid{
+  align-items:stretch;
+}
+.carePathCard{
+  min-height:185px;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.carePathCard:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(21,57,95,.11)!important;
+}
+.imagePathCard .carePathImageWrap{
+  min-height:185px!important;
+}
+.imagePathCard img{
+  object-position:center center;
+}
+.bluePath,.navyPath{
+  padding:24px!important;
+}
+.bluePath .carePathArt,.navyPath .carePathArt{
+  width:64px!important;
+  height:64px!important;
+}
+
+/* Signup */
+.createAccountSection{
+  padding:52px 0 70px!important;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(225,247,239,.5),transparent 23%),
+    linear-gradient(180deg,#f8fbff,#f4f8fc)!important;
+}
+.signupIntro{
+  max-width:760px;
+  margin:0 auto 24px;
+  text-align:center;
+}
+.signupIntro h2{
+  margin:12px 0 8px;
+}
+.signupIntro p{
+  margin:0;
+  color:#687d94;
+}
+.createAccountCard{
+  max-width:980px!important;
+  padding:30px!important;
+  box-shadow:var(--premium-shadow)!important;
+  border-radius:26px!important;
+}
+.createAccountCard>h3{
+  margin-top:0;
+}
+.signupInsuranceBox{
+  box-shadow:inset 0 0 0 1px rgba(15,73,117,.02);
+}
+.signupUploadCard{
+  transition:border-color .18s ease,background .18s ease;
+}
+.signupUploadCard:hover{
+  border-color:#5b89b7;
+  background:#f8fbff;
+}
+
+/* Footer / standalone service pages share a cleaner visual rhythm */
+footer{
+  background:#fff;
+  border-top:1px solid #e6edf4;
+  padding:24px 0;
+}
+.servicePageHero{
+  background:linear-gradient(180deg,#fff,#f8fbff);
+}
+.serviceHeroImageCard{
+  box-shadow:var(--premium-shadow)!important;
+}
+
+/* Desktop widths */
+@media(min-width:1280px){
+  .wrap{width:min(1280px,calc(100% - 56px))!important}
+  .mockGrid{
+    grid-template-columns:minmax(360px,.92fr) minmax(490px,1.12fr) minmax(320px,.78fr)!important;
+  }
+}
+@media(min-width:1500px){
+  .wrap{width:min(1360px,calc(100% - 72px))!important}
+  .mockGrid{
+    grid-template-columns:minmax(390px,.9fr) minmax(520px,1.14fr) minmax(330px,.76fr)!important;
+  }
+}
+
+/* Tablet */
+@media(max-width:1000px){
+  .mockHero{padding-top:34px!important}
+  .mockGrid{gap:24px!important}
+  .mockProducts{min-height:400px!important}
+  .mockProducts img{max-width:540px!important}
+  .desktopValuePanel{margin-top:4px}
+  .valueMiniGrid{grid-template-columns:repeat(2,1fr)!important}
+  .homeTrustRibbon{padding-top:8px!important}
+  .createAccountCard{padding:24px!important}
+}
+
+/* Mobile */
+@media(max-width:700px){
+  .homeNav{height:72px!important}
+  .mockHero{padding:24px 0 16px!important}
+  .mockCopy h1{font-size:3.25rem!important}
+  .mockCopy h3 br{display:none}
+  .heroButtons{display:grid!important;grid-template-columns:1fr!important}
+  .greenBtn,.outlineBtn{width:100%;text-align:center}
+  .heroTrust{gap:10px!important}
+  .mockProducts{min-height:300px!important}
+  .mockProducts:before{width:280px;height:280px}
+  .mockProducts img{max-width:360px!important}
+  .desktopValuePanel{gap:10px!important}
+  .valueMiniGrid{grid-template-columns:1fr!important}
+  .pharmacyChoiceMini{padding:18px!important}
+  .trustRibbonInner{border-radius:16px!important}
+  .howPanel{padding:22px 16px!important}
+  .homeCarePaths{padding:24px 0 34px!important}
+  .imagePathCard .carePathImageWrap{grid-template-columns:1fr!important}
+  .imagePathCard img{height:190px}
+  .createAccountSection{padding:38px 0 48px!important}
+  .createAccountCard{padding:18px!important;border-radius:20px!important}
+}
+
+
+/* ==================================================================
+   2026-08-16 MOBILE-FIRST REFINEMENT
+   Desktop remains unchanged. These rules intentionally override prior
+   responsive rules at <= 700px.
+   ================================================================== */
+@media(max-width:700px){
+
+  html{
+    scroll-padding-top:74px;
+  }
+  body{
+    overflow-x:hidden;
+    background:#fff;
+  }
+  .wrap{
+    width:min(100% - 28px,560px)!important;
+  }
+
+  /* ---------- Mobile header ---------- */
+  .siteHeader{
+    padding:0!important;
+    background:rgba(255,255,255,.98)!important;
+    box-shadow:0 1px 12px rgba(21,57,95,.07)!important;
+  }
+  .homeNav{
+    height:68px!important;
+    display:grid!important;
+    grid-template-columns:1fr auto!important;
+    gap:10px!important;
+  }
+  .homeLogo{
+    min-width:0;
+  }
+  .homeLogo img{
+    width:104px!important;
+    height:52px!important;
+    object-fit:contain!important;
+    object-position:left center!important;
+  }
+  .mainLinks,.canada{
+    display:none!important;
+  }
+  .navActions{
+    display:flex!important;
+    justify-content:flex-end!important;
+    align-items:center!important;
+    gap:7px!important;
+  }
+  .navActions .signin{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+    padding:8px 11px!important;
+    min-height:38px;
+    border-radius:999px!important;
+    font-size:.75rem!important;
+    line-height:1!important;
+    white-space:nowrap;
+  }
+  .navActions .start{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+    padding:9px 12px!important;
+    min-height:38px;
+    border-radius:999px!important;
+    font-size:.75rem!important;
+    white-space:nowrap;
+  }
+
+  /* ---------- Hero ---------- */
+  .mockHero{
+    padding:24px 0 12px!important;
+    background:
+      radial-gradient(circle at 50% 42%,rgba(232,241,255,.72),transparent 34%),
+      linear-gradient(180deg,#fff,#fbfdff)!important;
+  }
+  .mockGrid{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:15px!important;
+    min-height:0!important;
+  }
+  .mockCopy{
+    text-align:center;
+    padding:2px 0 0!important;
+  }
+  .licensedBadge{
+    font-size:.72rem!important;
+    padding:7px 11px!important;
+    margin:0 auto;
+  }
+  .mockCopy h1{
+    font-size:clamp(2.8rem,14.5vw,3.55rem)!important;
+    line-height:.94!important;
+    letter-spacing:-.052em!important;
+    margin:14px auto 14px!important;
+    max-width:390px!important;
+  }
+  .mockCopy h3{
+    font-size:1.02rem!important;
+    line-height:1.35!important;
+    max-width:355px!important;
+    margin:0 auto 10px!important;
+  }
+  .mockCopy>p{
+    font-size:.91rem!important;
+    line-height:1.55!important;
+    max-width:355px!important;
+    margin:0 auto!important;
+  }
+  .heroButtons{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:9px!important;
+    margin:20px auto 0!important;
+    max-width:370px;
+  }
+  .greenBtn,.outlineBtn{
+    width:100%!important;
+    min-width:0!important;
+    padding:11px 9px!important;
+    font-size:.82rem!important;
+    text-align:center;
+  }
+  .heroTrust{
+    max-width:390px!important;
+    margin:17px auto 0!important;
+    padding-top:13px!important;
+    border-top:1px solid #edf2f7!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,1fr)!important;
+    gap:6px!important;
+  }
+  .heroTrust span{
+    padding:8px 5px;
+    border:1px solid #e9eff5;
+    border-radius:12px;
+    background:rgba(255,255,255,.88);
+    font-size:.65rem!important;
+    line-height:1.25;
+    text-align:center;
+  }
+
+  /* Dedicated mobile product art */
+  .mockProducts{
+    grid-row:auto!important;
+    min-height:0!important;
+    padding:0!important;
+    margin:3px -4px 1px!important;
+    background:transparent!important;
+    overflow:visible!important;
+  }
+  .mockProducts:before{
+    width:280px!important;
+    height:280px!important;
+    background:radial-gradient(circle,rgba(232,240,255,.75),rgba(248,251,255,.05) 69%,transparent 73%)!important;
+  }
+  .mockProducts picture{
+    display:block;
+    width:100%;
+    position:relative;
+    z-index:1;
+  }
+  .mockProducts img{
+    display:block!important;
+    width:100%!important;
+    max-width:420px!important;
+    max-height:330px!important;
+    margin:0 auto!important;
+    object-fit:contain!important;
+    filter:drop-shadow(0 17px 18px rgba(20,53,91,.08))!important;
+  }
+
+  /* ---------- Right-side desktop content becomes compact mobile trust ---------- */
+  .desktopValuePanel{
+    display:block!important;
+    margin:2px 0 4px!important;
+  }
+  .careIllustrationCard{
+    display:none!important;
+  }
+  .valueMiniGrid{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+  }
+  .valueCard.compact{
+    min-height:88px!important;
+    display:block!important;
+    padding:12px!important;
+    text-align:left;
+    border-radius:15px!important;
+  }
+  .valueCard.compact .valueIcon{
+    width:32px!important;
+    height:32px!important;
+    margin-bottom:8px;
+    font-size:.82rem!important;
+    border-radius:10px!important;
+  }
+  .valueCard.compact strong{
+    font-size:.78rem!important;
+    line-height:1.22!important;
+  }
+  .valueCard.compact small{
+    font-size:.66rem!important;
+    line-height:1.3!important;
+  }
+  .pharmacyChoiceMini{
+    margin-top:8px!important;
+    padding:16px!important;
+    border-radius:17px!important;
+  }
+  .pharmacyChoiceMini span{
+    font-size:.65rem!important;
+  }
+  .pharmacyChoiceMini strong{
+    font-size:.94rem!important;
+    margin:4px 0 10px!important;
+  }
+  .pharmacyChoiceMini a{
+    padding:8px 11px!important;
+    font-size:.72rem!important;
+  }
+
+  /* ---------- Mobile sign-in becomes a bottom sheet ---------- */
+  .authDropCard{
+    position:fixed!important;
+    left:10px!important;
+    right:10px!important;
+    bottom:10px!important;
+    top:auto!important;
+    z-index:110!important;
+    width:auto!important;
+    max-width:520px!important;
+    max-height:calc(100dvh - 32px)!important;
+    overflow-y:auto!important;
+    margin:0 auto!important;
+    padding:22px 17px calc(20px + env(safe-area-inset-bottom))!important;
+    border-radius:24px!important;
+    opacity:0!important;
+    pointer-events:none!important;
+    transform:translateY(calc(100% + 28px))!important;
+    transition:transform .25s ease,opacity .2s ease!important;
+    box-shadow:0 28px 90px rgba(10,36,65,.30)!important;
+  }
+  .authDropCard:before{
+    content:"";
+    display:block;
+    width:42px;
+    height:4px;
+    border-radius:99px;
+    background:#d9e2eb;
+    margin:-8px auto 14px;
+  }
+  .authDropCard.open{
+    opacity:1!important;
+    pointer-events:auto!important;
+    transform:translateY(0)!important;
+  }
+  body:has(.authDropCard.open):before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:105;
+    background:rgba(9,30,53,.46);
+    backdrop-filter:blur(2px);
+  }
+  .authRoleTabs{
+    margin-bottom:14px!important;
+  }
+  .authRole{
+    padding:9px 8px!important;
+    font-size:.8rem!important;
+  }
+  .dropPanel h2{
+    font-size:1.35rem!important;
+  }
+  .dropPanel>p{
+    font-size:.78rem!important;
+    margin-bottom:13px!important;
+  }
+  .dropPanel input{
+    min-height:44px;
+  }
+  .dropPanel .submit,.googleBtn{
+    min-height:44px;
+  }
+
+  /* ---------- Trust ribbon: 2 x 2 instead of long vertical list ---------- */
+  .homeTrustRibbon{
+    padding:9px 0 20px!important;
+  }
+  .trustRibbonInner{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    border-radius:17px!important;
+    overflow:hidden;
+  }
+  .trustRibbonInner>div{
+    min-height:82px!important;
+    display:grid!important;
+    grid-template-columns:30px 1fr!important;
+    padding:13px 11px!important;
+    border-right:1px solid #e8eef4!important;
+    border-bottom:1px solid #e8eef4!important;
+  }
+  .trustRibbonInner>div:nth-child(2n){
+    border-right:0!important;
+  }
+  .trustRibbonInner>div:nth-last-child(-n+2){
+    border-bottom:0!important;
+  }
+  .trustRibbonInner>div>span{
+    font-size:1.05rem!important;
+  }
+  .trustRibbonInner strong{
+    font-size:.72rem!important;
+  }
+  .trustRibbonInner small{
+    font-size:.61rem!important;
+    line-height:1.25!important;
+  }
+
+  /* ---------- How It Works: swipeable cards ---------- */
+  .howExact{
+    padding:0 0 20px!important;
+  }
+  .howPanel{
+    width:100%!important;
+    padding:22px 0 18px!important;
+    border-left:0!important;
+    border-right:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    background:#fff;
+  }
+  .howPanel>.sectionTitle{
+    padding:0 14px;
+  }
+  .sectionTitle h2{
+    font-size:1.7rem!important;
+  }
+  .sectionTitle p{
+    font-size:.78rem!important;
+    margin-bottom:15px!important;
+  }
+  .newSteps{
+    display:flex!important;
+    gap:10px!important;
+    overflow-x:auto!important;
+    overscroll-behavior-inline:contain;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    padding:3px 14px 13px!important;
+  }
+  .newSteps::-webkit-scrollbar{
+    display:none;
+  }
+  .newStep{
+    flex:0 0 min(78vw,290px)!important;
+    min-height:180px;
+    scroll-snap-align:center;
+    border:1px solid #e8eef4;
+    border-radius:18px!important;
+    padding:20px 16px 16px!important;
+    background:#fff;
+    box-shadow:0 9px 24px rgba(21,57,95,.055);
+  }
+  .stepNo{
+    left:15px!important;
+    top:15px!important;
+    width:30px!important;
+    height:30px!important;
+    font-size:.75rem!important;
+  }
+  .stepIcon{
+    font-size:2.6rem!important;
+    margin:4px 0 7px!important;
+  }
+  .newStep h3{
+    font-size:.94rem!important;
+  }
+  .newStep p{
+    max-width:225px;
+    margin:0 auto!important;
+    font-size:.76rem!important;
+  }
+
+  /* ---------- Care pathways ---------- */
+  .homeCarePaths{
+    padding:22px 0 35px!important;
+  }
+  .homeCarePaths .sectionTitle{
+    padding:0 5px;
+  }
+  .carePathGrid{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+  .carePathCard{
+    min-height:0!important;
+    border-radius:18px!important;
+  }
+  .imagePathCard .carePathImageWrap{
+    display:grid!important;
+    grid-template-columns:1.02fr .98fr!important;
+    min-height:165px!important;
+  }
+  .imagePathCard .carePathCopy{
+    padding:18px 14px!important;
+  }
+  .imagePathCard .carePathCopy strong{
+    font-size:.92rem!important;
+  }
+  .imagePathCard .carePathCopy small{
+    font-size:.69rem!important;
+  }
+  .imagePathCard .carePathCopy em{
+    font-size:.72rem!important;
+    margin-top:9px!important;
+  }
+  .imagePathCard img{
+    height:165px!important;
+    object-fit:cover!important;
+  }
+  .bluePath,.navyPath{
+    grid-template-columns:50px 1fr 18px!important;
+    padding:15px!important;
+    min-height:112px!important;
+  }
+  .bluePath .carePathArt,.navyPath .carePathArt{
+    width:48px!important;
+    height:48px!important;
+    border-radius:14px!important;
+    font-size:1.25rem!important;
+  }
+  .carePathCard strong{
+    font-size:.9rem!important;
+  }
+  .carePathCard small{
+    font-size:.69rem!important;
+    line-height:1.32;
+  }
+
+  /* ---------- Signup ---------- */
+  .createAccountSection{
+    padding:34px 0 50px!important;
+  }
+  .signupIntro{
+    margin-bottom:17px!important;
+    padding:0 6px;
+  }
+  .signupIntro .licensedBadge{
+    margin-bottom:4px;
+  }
+  .signupIntro h2{
+    font-size:1.75rem!important;
+    margin:9px 0 7px!important;
+  }
+  .signupIntro p{
+    font-size:.82rem!important;
+  }
+  .createAccountCard{
+    width:100%!important;
+    padding:17px!important;
+    border-radius:19px!important;
+    box-shadow:0 12px 32px rgba(21,57,95,.08)!important;
+  }
+  .createAccountCard form{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+  .createAccountCard .field,.createAccountCard .full{
+    grid-column:1!important;
+    min-width:0;
+  }
+  .createAccountCard label{
+    font-size:.78rem!important;
+  }
+  .createAccountCard input,
+  .createAccountCard select,
+  .createAccountCard textarea{
+    font-size:16px!important; /* prevents iOS zoom */
+    min-height:45px;
+    border-radius:12px!important;
+  }
+  .createAccountCard label.check{
+    padding:12px;
+    border:1px solid #e5edf4;
+    border-radius:13px;
+    background:#fbfdff;
+    font-size:.74rem!important;
+    line-height:1.42;
+  }
+  .signupInsuranceBox{
+    margin-top:5px!important;
+    padding:15px!important;
+    border-radius:16px!important;
+  }
+  .signupSectionTitle>div{
+    grid-template-columns:36px 1fr!important;
+  }
+  .signupSectionIcon{
+    width:34px!important;
+    height:34px!important;
+  }
+  .signupInsuranceGrid{
+    grid-template-columns:1fr!important;
+    gap:11px!important;
+  }
+  .signupUploadCard{
+    min-height:115px!important;
+    padding:16px!important;
+  }
+  .signupInsuranceManual{
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+  .insuranceSignupNote{
+    font-size:.69rem!important;
+    line-height:1.4!important;
+  }
+  .createAccountCard .submit{
+    width:100%;
+    min-height:48px;
+    border-radius:999px!important;
+    font-weight:900;
+  }
+
+  /* ---------- Footer / service pages ---------- */
+  footer{
+    text-align:center;
+    font-size:.78rem;
+    padding:22px 0 calc(22px + env(safe-area-inset-bottom))!important;
+  }
+  .servicePageHero{
+    padding-top:20px!important;
+  }
+  .servicePageGridEnhanced{
+    gap:15px!important;
+  }
+  .serviceHeroImageCard{
+    border-radius:18px!important;
+  }
+}
+
+/* Very small phones */
+@media(max-width:370px){
+  .wrap{width:calc(100% - 22px)!important}
+  .homeLogo img{width:92px!important}
+  .navActions .signin{padding:8px 9px!important;font-size:.7rem!important}
+  .navActions .start{padding:9px 10px!important;font-size:.7rem!important}
+  .mockCopy h1{font-size:2.72rem!important}
+  .heroButtons{grid-template-columns:1fr!important}
+  .heroTrust{grid-template-columns:1fr 1fr!important}
+  .heroTrust span:last-child{grid-column:1/-1}
+  .valueMiniGrid{grid-template-columns:1fr!important}
+  .trustRibbonInner{grid-template-columns:1fr!important}
+  .trustRibbonInner>div{
+    border-right:0!important;
+    border-bottom:1px solid #e8eef4!important;
+  }
+  .trustRibbonInner>div:last-child{border-bottom:0!important}
+  .imagePathCard .carePathImageWrap{grid-template-columns:1fr!important}
+  .imagePathCard img{height:175px!important}
+}
+
+
+/* ===== 2026-08-16 simplified top-right medication panel ===== */
+.desktopValuePanel{
+  display:grid;
+  align-self:center;
+}
+.medFeatureCard{
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+  border:1px solid #e4ebf3;
+  border-radius:24px;
+  box-shadow:0 18px 42px rgba(21,57,95,.10);
+  padding:18px;
+}
+.medFeatureHeader{
+  display:grid;
+  grid-template-columns:84px 1fr;
+  gap:14px;
+  align-items:center;
+  margin-bottom:14px;
+}
+.medAvatar{
+  position:relative;
+  width:84px;
+  height:84px;
+  border-radius:22px;
+  background:radial-gradient(circle at 35% 30%,#eef7ff,#dcecff);
+  overflow:hidden;
+  box-shadow:inset 0 0 0 1px rgba(20,62,102,.05);
+}
+.medAvatarCircle{
+  position:absolute;
+  left:26px; top:15px;
+  width:30px; height:30px;
+  border-radius:50%;
+  background:#1d5f99;
+}
+.medAvatarBody{
+  position:absolute;
+  left:18px; bottom:11px;
+  width:48px; height:34px;
+  border-radius:18px 18px 10px 10px;
+  background:#2aa68e;
+}
+.medAvatarBadge{
+  position:absolute;
+  right:8px; top:8px;
+  width:24px; height:24px;
+  border-radius:50%;
+  display:grid; place-items:center;
+  background:#0b8f6b; color:#fff; font-weight:900; font-size:1rem;
+  box-shadow:0 6px 14px rgba(11,143,107,.22);
+}
+.medFeatureCopy span{
+  display:block;
+  color:#0b8f6b;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  font-size:.7rem;
+  font-weight:900;
+  margin-bottom:3px;
+}
+.medFeatureCopy strong{
+  display:block;
+  color:#15385c;
+  font-size:1rem;
+  line-height:1.28;
+}
+.medFeatureCopy small{
+  display:block;
+  color:#6f8297;
+  line-height:1.4;
+  margin-top:5px;
+}
+.medChipGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.medChip{
+  display:grid;
+  grid-template-columns:40px 1fr;
+  gap:10px;
+  align-items:center;
+  padding:11px 12px;
+  border-radius:18px;
+  border:1px solid #e8eef5;
+  background:#fff;
+  min-height:84px;
+}
+.medChip b{
+  display:block;
+  color:#183a59;
+  font-size:.86rem;
+  line-height:1.2;
+}
+.medChip small{
+  display:block;
+  color:#708397;
+  font-size:.69rem;
+  line-height:1.25;
+  margin-top:4px;
+}
+.medIcon{
+  display:block;
+  margin:auto;
+}
+.penIcon{
+  width:14px;
+  height:44px;
+  border-radius:9px;
+  position:relative;
+  background:linear-gradient(180deg,#ffffff,#eff3f8);
+  border:1px solid #d5e0eb;
+  box-shadow:0 6px 14px rgba(18,54,93,.08);
+}
+.penIcon:before{
+  content:"";
+  position:absolute;
+  left:-2px; right:-2px; top:-4px;
+  height:9px;
+  border-radius:9px 9px 5px 5px;
+  background:#8a62d4;
+}
+.penIcon:after{
+  content:"";
+  position:absolute;
+  left:4px; right:4px; bottom:8px;
+  height:12px;
+  border-radius:4px;
+  background:#dfe7f1;
+}
+.ozempicChip .penIcon:before{
+  background:#5eb7d9;
+}
+.mounjaroChip .penIcon:before{
+  background:#7b4fd3;
+}
+.pillIcon{
+  width:34px;
+  height:24px;
+  border-radius:18px;
+  position:relative;
+  box-shadow:0 8px 14px rgba(18,54,93,.08);
+}
+.pillIcon:after{
+  content:"";
+  position:absolute;
+  top:4px; bottom:4px; left:50%;
+  width:2px;
+  border-radius:2px;
+  background:rgba(255,255,255,.72);
+  transform:translateX(-50%);
+}
+.greenPill{
+  background:linear-gradient(145deg,#3ed49b,#1cb277);
+}
+.bluePill{
+  background:linear-gradient(145deg,#53a8ff,#2b76dd);
+}
+
+/* Remove extra top whitespace now that treatment section is gone */
+.createAccountSection{
+  padding-top:46px!important;
+}
+
+@media(min-width:1280px){
+  .desktopValuePanel{
+    max-width:360px;
+  }
+}
+@media(max-width:1000px){
+  .desktopValuePanel{
+    grid-column:1/-1;
+  }
+  .medFeatureHeader{
+    grid-template-columns:72px 1fr;
+  }
+  .medAvatar{
+    width:72px; height:72px;
+  }
+}
+@media(max-width:700px){
+  .desktopValuePanel{
+    display:block!important;
+    margin-top:2px!important;
+  }
+  .medFeatureCard{
+    padding:14px!important;
+    border-radius:20px!important;
+    box-shadow:0 10px 26px rgba(21,57,95,.07)!important;
+  }
+  .medFeatureHeader{
+    grid-template-columns:58px 1fr!important;
+    gap:10px!important;
+    margin-bottom:10px!important;
+  }
+  .medAvatar{
+    width:58px!important;
+    height:58px!important;
+    border-radius:16px!important;
+  }
+  .medAvatarCircle{
+    left:18px!important; top:10px!important; width:22px!important; height:22px!important;
+  }
+  .medAvatarBody{
+    left:12px!important; bottom:8px!important; width:34px!important; height:24px!important;
+  }
+  .medAvatarBadge{
+    right:5px!important; top:5px!important; width:18px!important; height:18px!important; font-size:.82rem!important;
+  }
+  .medFeatureCopy span{
+    font-size:.62rem!important;
+  }
+  .medFeatureCopy strong{
+    font-size:.88rem!important;
+  }
+  .medFeatureCopy small{
+    font-size:.68rem!important;
+    margin-top:3px!important;
+  }
+  .medChipGrid{
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+  }
+  .medChip{
+    grid-template-columns:34px 1fr!important;
+    min-height:72px!important;
+    padding:9px 9px!important;
+    border-radius:15px!important;
+  }
+  .penIcon{
+    width:12px!important; height:37px!important;
+  }
+  .pillIcon{
+    width:28px!important; height:20px!important;
+  }
+  .medChip b{
+    font-size:.74rem!important;
+  }
+  .medChip small{
+    font-size:.61rem!important;
+    margin-top:2px!important;
+  }
+}
+@media(max-width:370px){
+  .medChipGrid{
+    grid-template-columns:1fr!important;
+  }
+}
+
+
+/* ===== 2026-08-16 treatments moved onto homepage ===== */
+.homeTreatments{
+  padding:34px 0 52px;
+  background:linear-gradient(180deg,#ffffff,#f7fbff);
+}
+.homeTreatmentsTitle{
+  max-width:760px;
+  margin:0 auto 24px;
+  text-align:center;
+}
+.homeTreatmentsTitle .licensedBadge{
+  margin-bottom:8px;
+}
+.homeTreatmentGrid{
+  display:grid;
+  grid-template-columns:1.15fr .92fr .92fr;
+  gap:16px;
+}
+.homeTreatmentCard{
+  position:relative;
+  overflow:hidden;
+  min-height:265px;
+  border-radius:24px;
+  border:1px solid #e2eaf3;
+  box-shadow:0 14px 36px rgba(21,57,95,.07);
+  background:#fff;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.homeTreatmentCard:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 44px rgba(21,57,95,.11);
+}
+.homeTreatmentCopy{
+  position:relative;
+  z-index:2;
+  padding:24px;
+}
+.treatmentEyebrow{
+  display:block;
+  text-transform:uppercase;
+  letter-spacing:.045em;
+  font-size:.68rem;
+  font-weight:900;
+  margin-bottom:5px;
+}
+.homeTreatmentCard h3{
+  margin:0 0 9px;
+  color:#15385c;
+  font-size:1.28rem;
+  line-height:1.18;
+}
+.homeTreatmentCard p{
+  margin:0;
+  color:#657c92;
+  font-size:.88rem;
+  line-height:1.48;
+}
+.homeTreatmentBtn{
+  display:inline-flex;
+  align-items:center;
+  margin-top:17px;
+  padding:9px 14px;
+  border-radius:999px;
+  color:#fff;
+  font-size:.78rem;
+  font-weight:900;
+}
+.greenTreatmentBtn{background:#07966e}
+.blueTreatmentBtn{background:#246fdd}
+.navyTreatmentBtn{background:#183d68}
+
+.weightHomeCard{
+  display:grid;
+  grid-template-columns:1.04fr .96fr;
+  background:linear-gradient(145deg,#effbf6,#ffffff);
+}
+.weightHomeCard .treatmentEyebrow{color:#078c67}
+.homeTreatmentImage{
+  min-height:265px;
+}
+.homeTreatmentImage img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
+
+.mensHomeCard{
+  background:linear-gradient(145deg,#edf6ff,#ffffff);
+}
+.mensHomeCard .treatmentEyebrow{color:#246fdd}
+.mensTreatmentArt{
+  position:absolute;
+  right:18px;
+  bottom:18px;
+  width:122px;
+  height:86px;
+}
+.mensPill{
+  position:absolute;
+  width:72px;
+  height:48px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:rgba(255,255,255,.82);
+  font-weight:950;
+  font-size:1.08rem;
+  box-shadow:0 12px 24px rgba(21,57,95,.13);
+}
+.bluePillHome{
+  left:0;
+  top:22px;
+  background:linear-gradient(145deg,#5daaff,#2874da);
+  transform:rotate(-10deg);
+}
+.goldPillHome{
+  right:0;
+  top:0;
+  background:linear-gradient(145deg,#ffc857,#e89b1d);
+  transform:rotate(8deg);
+}
+
+.minorHomeCard{
+  background:linear-gradient(145deg,#f5f1ff,#ffffff);
+}
+.minorHomeCard .treatmentEyebrow{color:#6950be}
+.minorTreatmentArt{
+  position:absolute;
+  right:22px;
+  bottom:18px;
+  width:102px;
+  height:112px;
+}
+.minorClipboard{
+  width:82px;
+  height:104px;
+  margin:auto;
+  border-radius:12px;
+  border:5px solid #6950be;
+  background:#fff;
+  box-shadow:0 12px 24px rgba(75,52,142,.13);
+  transform:rotate(5deg);
+  display:grid;
+  align-content:center;
+  gap:10px;
+  padding:14px;
+}
+.minorClipboard:before{
+  content:"";
+  width:34px;
+  height:12px;
+  border-radius:6px;
+  background:#6950be;
+  position:absolute;
+  top:-5px;
+  left:34px;
+}
+.minorClipboard span{
+  color:#6950be;
+  font-weight:950;
+  border-bottom:2px solid #d9d0f1;
+  padding-bottom:3px;
+}
+.homeTreatmentNote{
+  max-width:860px;
+  margin:18px auto 0;
+  text-align:center;
+  color:#74869a;
+  font-size:.72rem;
+  line-height:1.45;
+}
+
+/* Nav spacing after Treatments tab removal */
+.mainLinks{
+  gap:30px!important;
+}
+
+@media(max-width:1000px){
+  .homeTreatmentGrid{
+    grid-template-columns:1fr 1fr;
+  }
+  .weightHomeCard{
+    grid-column:1/-1;
+  }
+}
+
+@media(max-width:700px){
+  .homeTreatments{
+    padding:26px 0 38px!important;
+  }
+  .homeTreatmentsTitle{
+    margin-bottom:17px!important;
+  }
+  .homeTreatmentsTitle h2{
+    font-size:1.75rem!important;
+  }
+  .homeTreatmentsTitle p{
+    font-size:.8rem!important;
+  }
+  .homeTreatmentGrid{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+  .weightHomeCard{
+    grid-column:auto!important;
+    grid-template-columns:1fr 1fr!important;
+    min-height:190px!important;
+  }
+  .homeTreatmentCard{
+    min-height:190px!important;
+    border-radius:19px!important;
+  }
+  .homeTreatmentCopy{
+    padding:17px!important;
+  }
+  .homeTreatmentCard h3{
+    font-size:1rem!important;
+  }
+  .homeTreatmentCard p{
+    font-size:.72rem!important;
+  }
+  .homeTreatmentBtn{
+    margin-top:12px!important;
+    padding:8px 11px!important;
+    font-size:.69rem!important;
+  }
+  .homeTreatmentImage{
+    min-height:190px!important;
+  }
+  .mensTreatmentArt{
+    width:105px!important;
+    height:76px!important;
+    right:10px!important;
+    bottom:11px!important;
+  }
+  .mensPill{
+    width:62px!important;
+    height:42px!important;
+  }
+  .minorTreatmentArt{
+    right:10px!important;
+    bottom:8px!important;
+    transform:scale(.82);
+    transform-origin:bottom right;
+  }
+}
+
+@media(max-width:390px){
+  .weightHomeCard{
+    grid-template-columns:1fr!important;
+  }
+  .homeTreatmentImage{
+    height:180px!important;
+    min-height:180px!important;
+  }
+}
+
+
+/* ===== 2026-08-16 centered + calmer homepage refinement ===== */
+html,body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden!important;
+}
+*{
+  max-width:100%;
+}
+img,svg,picture,video{
+  max-width:100%;
+}
+
+/* One consistent centered content width across the homepage */
+.wrap{
+  width:min(1180px,calc(100% - 40px))!important;
+  max-width:1180px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+.siteHeader .wrap,
+.mockHero .wrap,
+.homeTrustRibbon .wrap,
+.howExact .wrap,
+.homeTreatments .wrap,
+.createAccountSection .wrap,
+footer .wrap{
+  width:min(1180px,calc(100% - 40px))!important;
+  max-width:1180px!important;
+  margin-inline:auto!important;
+}
+
+/* Header stays centered and avoids crowding */
+.homeNav{
+  grid-template-columns:180px minmax(0,1fr) auto!important;
+  gap:20px!important;
+}
+.homeLogo img{
+  width:150px!important;
+  height:66px!important;
+}
+.mainLinks{
+  gap:24px!important;
+  min-width:0!important;
+}
+.mainLinks a{
+  font-size:.88rem!important;
+  white-space:nowrap;
+}
+.navActions{
+  min-width:max-content;
+}
+
+/* Hero: calmer proportions and guaranteed containment */
+.mockHero{
+  overflow:hidden!important;
+  padding:42px 0 24px!important;
+}
+.mockGrid{
+  width:100%!important;
+  max-width:100%!important;
+  grid-template-columns:minmax(300px,.92fr) minmax(390px,1.06fr) minmax(250px,.72fr)!important;
+  gap:24px!important;
+  min-height:500px!important;
+  align-items:center!important;
+}
+.mockCopy,
+.mockProducts,
+.desktopValuePanel{
+  min-width:0!important;
+  width:100%!important;
+  max-width:100%!important;
+}
+.mockCopy h1{
+  font-size:clamp(3.4rem,5.1vw,5rem)!important;
+  margin:16px 0 16px!important;
+}
+.mockCopy h3{
+  font-size:1.08rem!important;
+  max-width:440px!important;
+}
+.mockCopy>p{
+  font-size:.94rem!important;
+  max-width:445px!important;
+}
+.heroButtons{
+  gap:10px!important;
+}
+.calmHeroTrust{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:8px!important;
+  border-top:0!important;
+  padding-top:0!important;
+  margin-top:18px!important;
+}
+.calmHeroTrust span{
+  background:#f7fafc;
+  border:1px solid #e8eef4;
+  border-radius:999px;
+  padding:7px 10px;
+  font-size:.72rem!important;
+}
+
+.mockProducts{
+  min-height:430px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border-radius:28px;
+}
+.mockProducts picture{
+  width:100%;
+  display:block;
+}
+.mockProducts img{
+  width:100%!important;
+  max-width:540px!important;
+  height:auto!important;
+  margin:auto!important;
+  display:block!important;
+  object-fit:contain!important;
+}
+.mockProducts:before{
+  width:350px!important;
+  height:350px!important;
+}
+
+/* Top-right card is intentionally compact, not a competing focal point */
+.desktopValuePanel{
+  align-self:center!important;
+}
+.medFeatureCard{
+  padding:15px!important;
+  border-radius:20px!important;
+  box-shadow:0 10px 26px rgba(21,57,95,.065)!important;
+}
+.medFeatureHeader{
+  grid-template-columns:58px 1fr!important;
+  gap:10px!important;
+  margin-bottom:10px!important;
+}
+.medAvatar{
+  width:58px!important;
+  height:58px!important;
+  border-radius:16px!important;
+}
+.medAvatarCircle{left:18px!important;top:10px!important;width:22px!important;height:22px!important}
+.medAvatarBody{left:12px!important;bottom:8px!important;width:34px!important;height:24px!important}
+.medAvatarBadge{width:18px!important;height:18px!important;font-size:.78rem!important}
+.medFeatureCopy span{font-size:.61rem!important}
+.medFeatureCopy strong{font-size:.88rem!important}
+.medFeatureCopy small{font-size:.67rem!important}
+.medChipGrid{
+  gap:7px!important;
+}
+.medChip{
+  grid-template-columns:30px 1fr!important;
+  min-height:66px!important;
+  padding:8px!important;
+  border-radius:14px!important;
+}
+.medChip b{font-size:.72rem!important}
+.medChip small{font-size:.59rem!important}
+.penIcon{height:34px!important;width:11px!important}
+.pillIcon{width:27px!important;height:19px!important}
+
+/* Trust area: four calm equal items, no long crowded strip */
+.homeTrustRibbon{
+  padding:4px 0 26px!important;
+}
+.calmTrustRibbon{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:10px!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+.calmTrustRibbon>div{
+  display:grid!important;
+  grid-template-columns:34px 1fr!important;
+  gap:9px!important;
+  align-items:center!important;
+  min-height:72px!important;
+  padding:13px 14px!important;
+  background:#fff!important;
+  border:1px solid #e7edf4!important;
+  border-radius:16px!important;
+  box-shadow:0 7px 20px rgba(21,57,95,.045)!important;
+}
+.trustSimpleIcon{
+  grid-row:1/3;
+  width:32px;
+  height:32px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background:#edf7f3;
+  font-size:.9rem;
+}
+.calmTrustRibbon strong{font-size:.75rem!important;line-height:1.2!important}
+.calmTrustRibbon small{font-size:.63rem!important;line-height:1.25!important}
+
+/* Reduce visual noise in subsequent sections */
+.howExact{
+  padding:4px 0 28px!important;
+}
+.howPanel{
+  padding:28px!important;
+  border-radius:24px!important;
+  box-shadow:0 8px 26px rgba(21,57,95,.045)!important;
+}
+.newSteps{
+  gap:12px!important;
+}
+.newStep{
+  box-shadow:none!important;
+  border:1px solid #e8eef4!important;
+  background:#fff!important;
+}
+
+.homeTreatments{
+  padding:32px 0 48px!important;
+}
+.homeTreatmentsTitle{
+  margin-bottom:22px!important;
+}
+.homeTreatmentGrid{
+  grid-template-columns:1.08fr .96fr .96fr!important;
+  gap:14px!important;
+}
+.homeTreatmentCard{
+  min-height:240px!important;
+  border-radius:20px!important;
+  box-shadow:0 8px 26px rgba(21,57,95,.055)!important;
+}
+.homeTreatmentCard:hover{
+  transform:none!important;
+  box-shadow:0 10px 28px rgba(21,57,95,.07)!important;
+}
+.homeTreatmentCopy{
+  padding:21px!important;
+}
+.homeTreatmentCard h3{
+  font-size:1.12rem!important;
+}
+.homeTreatmentCard p{
+  font-size:.8rem!important;
+}
+.homeTreatmentImage{
+  min-height:240px!important;
+}
+
+/* Stop broad desktop override rules from making the layout wider than intended */
+@media(min-width:1280px){
+  .wrap,
+  .siteHeader .wrap,
+  .mockHero .wrap,
+  .homeTrustRibbon .wrap,
+  .howExact .wrap,
+  .homeTreatments .wrap,
+  .createAccountSection .wrap,
+  footer .wrap{
+    width:min(1180px,calc(100% - 48px))!important;
+    max-width:1180px!important;
+  }
+  .mockGrid{
+    grid-template-columns:minmax(300px,.92fr) minmax(390px,1.06fr) minmax(250px,.72fr)!important;
+  }
+}
+
+/* Mid-size laptops: switch to 2-column hero before it becomes crowded */
+@media(max-width:1120px) and (min-width:701px){
+  .wrap,
+  .siteHeader .wrap,
+  .mockHero .wrap,
+  .homeTrustRibbon .wrap,
+  .howExact .wrap,
+  .homeTreatments .wrap,
+  .createAccountSection .wrap,
+  footer .wrap{
+    width:min(960px,calc(100% - 36px))!important;
+  }
+  .homeNav{
+    grid-template-columns:145px 1fr auto!important;
+    gap:14px!important;
+  }
+  .homeLogo img{width:132px!important}
+  .mainLinks{gap:16px!important}
+  .mainLinks a{font-size:.82rem!important}
+  .mockGrid{
+    grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important;
+    gap:22px!important;
+  }
+  .desktopValuePanel{
+    grid-column:1/-1!important;
+    max-width:680px!important;
+    margin:0 auto!important;
+  }
+  .medFeatureCard{
+    display:grid!important;
+    grid-template-columns:.75fr 1.25fr!important;
+    gap:14px!important;
+    align-items:center!important;
+  }
+  .medFeatureHeader{margin-bottom:0!important}
+  .homeTreatmentGrid{
+    grid-template-columns:1fr 1fr!important;
+  }
+  .weightHomeCard{
+    grid-column:1/-1!important;
+  }
+  .calmTrustRibbon{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
+/* Mobile remains fully centered and single-column */
+@media(max-width:700px){
+  .wrap,
+  .siteHeader .wrap,
+  .mockHero .wrap,
+  .homeTrustRibbon .wrap,
+  .homeTreatments .wrap,
+  .createAccountSection .wrap,
+  footer .wrap{
+    width:calc(100% - 24px)!important;
+    max-width:560px!important;
+    margin-inline:auto!important;
+  }
+  .mockGrid{
+    grid-template-columns:1fr!important;
+    width:100%!important;
+    gap:14px!important;
+  }
+  .mockCopy{
+    text-align:center!important;
+  }
+  .calmHeroTrust{
+    justify-content:center!important;
+  }
+  .mockProducts{
+    width:100%!important;
+    margin:0 auto!important;
+    border-radius:20px!important;
+  }
+  .desktopValuePanel{
+    width:100%!important;
+    margin:0 auto!important;
+  }
+  .medChipGrid{
+    grid-template-columns:1fr 1fr!important;
+  }
+  .calmTrustRibbon{
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+  }
+  .calmTrustRibbon>div{
+    min-height:68px!important;
+    padding:11px!important;
+  }
+  .homeTreatmentGrid{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+  .weightHomeCard{
+    grid-column:auto!important;
+  }
+  .createAccountCard{
+    width:100%!important;
+  }
+}
+
+@media(max-width:390px){
+  .calmTrustRibbon{
+    grid-template-columns:1fr!important;
+  }
+  .medChipGrid{
+    grid-template-columns:1fr!important;
+  }
+}
+
+/* audit remediation: accessibility + secure insurance profile */
+:focus-visible{outline:3px solid rgba(45,112,234,.38);outline-offset:3px}.profileEditBlock{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}.profileEditBlock h4{margin:0 0 12px;color:var(--navy);font-size:1rem}.profileInsuranceForm{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:16px}.profileInsuranceCardForm{padding:14px;border:1px solid var(--line);border-radius:16px;background:#f9fcff}.secureUploadNotice{cursor:default!important}.footerExtra{margin-top:7px}.legalNav{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.legalNav a{font-weight:750;color:#506a84}@media(max-width:700px){.profileInsuranceForm{grid-template-columns:1fr}.legalNav{gap:9px;font-size:.76rem}}
+
+
+/* ===== 2026-08-16 clean visual remediation ===== */
+.mockGrid{
+  grid-template-columns:minmax(340px,.9fr) minmax(460px,1.1fr)!important;
+  gap:48px!important;
+  align-items:center!important;
+}
+.mockProducts{
+  min-height:500px!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:visible!important;
+  background:transparent!important;
+}
+.mockProducts:before{display:none!important}
+.cleanHeroVisual{
+  width:100%;
+  max-width:690px;
+  margin-inline:auto;
+}
+.cleanHeroVisual svg{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.desktopValuePanel{display:none!important}
+
+.homeTreatmentImage{
+  overflow:hidden;
+  background:#eef3f7;
+}
+.homeTreatmentImage img{
+  width:100%;
+  height:100%;
+  object-fit:cover!important;
+  object-position:center 48%!important;
+  display:block;
+}
+.mensPill{
+  color:transparent!important;
+}
+@media(max-width:1120px) and (min-width:701px){
+  .mockGrid{
+    grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)!important;
+    gap:28px!important;
+  }
+  .cleanHeroVisual{max-width:610px}
+}
+@media(max-width:700px){
+  .mockGrid{
+    grid-template-columns:1fr!important;
+    gap:12px!important;
+  }
+  .mockProducts{
+    min-height:auto!important;
+    margin:0 auto!important;
+    padding:4px 0 10px!important;
+  }
+  .cleanHeroVisual{
+    max-width:460px!important;
+  }
+  .homeTreatmentImage img{
+    min-height:190px;
+    object-position:center center!important;
+  }
+}
+
+
+/* ===== How It Works refresh ===== */
+.howPanelRefresh{padding:26px 30px 28px!important;background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%)}
+.howJourney{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch;margin-top:8px}
+.journeyConnector{position:absolute;left:10%;right:10%;top:86px;height:2px;background:linear-gradient(90deg,#d9e6f3 0%,#c7d9ea 100%);z-index:0}
+.journeyStep{position:relative;z-index:1;background:#fff;border:1px solid #e7eef6;border-radius:24px;padding:24px 18px 20px;text-align:center;box-shadow:0 12px 28px rgba(24,63,108,.06);transition:transform .22s ease, box-shadow .22s ease}
+.journeyStep:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(24,63,108,.1)}
+.journeyNumber{display:inline-flex;align-items:center;justify-content:center;min-width:54px;height:30px;border-radius:999px;background:#e9f7f1;color:#0c8a65;font-weight:800;font-size:.8rem;letter-spacing:.06em;margin-bottom:12px}
+.journeyArt{width:96px;height:96px;border-radius:24px;background:linear-gradient(180deg,#f8fbff 0%,#eef5fb 100%);display:grid;place-items:center;margin:0 auto 14px;border:1px solid #e7eef6}
+.journeyArt svg{width:74px;height:74px;display:block}
+.journeyStep h3{margin:0 0 8px;color:#143555;font-size:1.02rem}
+.journeyStep p{margin:0;color:#637a92;font-size:.89rem;line-height:1.55;max-width:230px;margin-inline:auto}
+.howNote{margin-top:16px;text-align:center;font-size:.83rem;color:#5c7188;background:#f4f8fc;border:1px solid #e4edf5;border-radius:16px;padding:12px 16px}
+
+@media(max-width:1000px){
+  .howJourney{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .journeyConnector{display:none}
+}
+@media(max-width:700px){
+  .howExact{padding:6px 0 18px!important}
+  .howPanelRefresh{padding:22px 14px 20px!important;border-left:0!important;border-right:0!important;border-radius:0!important;box-shadow:none!important}
+  .howJourney{display:flex!important;overflow-x:auto;gap:12px;padding:4px 2px 8px;scroll-snap-type:x mandatory}
+  .howJourney::-webkit-scrollbar{display:none}
+  .journeyStep{flex:0 0 min(82vw,300px);scroll-snap-align:center;padding:20px 16px 18px}
+  .journeyArt{width:88px;height:88px;margin-bottom:12px}
+  .journeyArt svg{width:68px;height:68px}
+  .journeyStep h3{font-size:.98rem}
+  .journeyStep p{font-size:.8rem}
+  .howNote{font-size:.76rem;padding:11px 12px}
+}
+
+
+/* ===== 2026-08-16 product image hero update ===== */
+.approvedHeroVisual{width:100%;max-width:700px;margin-inline:auto;display:grid;place-items:center}
+.approvedHeroVisual img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;filter:drop-shadow(0 18px 32px rgba(18,50,89,.10));border-radius:26px;background:transparent}
+.mockProducts{min-height:460px!important;display:grid!important;place-items:center!important;padding:8px 0!important}
+@media(max-width:700px){
+  .approvedHeroVisual{max-width:440px}
+  .approvedHeroVisual img{max-height:none}
+  .mockProducts{min-height:auto!important;padding:0!important}
+}
+
+
+/* ===== 2026-08-16 larger premium / luxurious minimal refresh ===== */
+:root{
+  --lux-navy:#102b4e;
+  --lux-navy-soft:#163b69;
+  --lux-green:#0b8f69;
+  --lux-text:#566b82;
+  --lux-surface:#ffffff;
+  --lux-surface-soft:#f8fbfe;
+  --lux-border:#e8eef5;
+  --lux-shadow:0 24px 60px rgba(17,46,84,.08);
+  --lux-shadow-soft:0 16px 38px rgba(17,46,84,.06);
+}
+body{
+  background:linear-gradient(180deg,#fbfdff 0%,#ffffff 18%,#f8fbfe 100%);
+}
+.wrap{
+  width:min(1320px,calc(100% - 56px))!important;
+}
+.siteHeader{
+  background:rgba(255,255,255,.9)!important;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(232,238,245,.9);
+  box-shadow:0 8px 24px rgba(16,43,78,.03);
+}
+.homeNav{
+  height:88px!important;
+}
+.mainLinks a{
+  font-weight:650;
+  color:#41566f!important;
+}
+.mainLinks a.active,.mainLinks a:hover{
+  color:var(--lux-navy)!important;
+}
+.signin{
+  border:1px solid var(--lux-border)!important;
+  background:#fff!important;
+  color:var(--lux-navy)!important;
+  border-radius:999px!important;
+  box-shadow:0 8px 24px rgba(16,43,78,.05);
+}
+.start,.greenBtn,.submit,.homeTreatmentBtn{
+  box-shadow:0 16px 32px rgba(11,143,105,.18);
+}
+.start{
+  border-radius:999px!important;
+}
+.mockHero{
+  padding:66px 0 36px!important;
+  background:
+    radial-gradient(circle at 65% 30%,rgba(220,234,248,.55),transparent 28%),
+    radial-gradient(circle at 22% 18%,rgba(226,245,237,.42),transparent 24%),
+    linear-gradient(180deg,#fcfeff 0%,#f8fbfe 44%,#ffffff 100%)!important;
+}
+.mockGrid{
+  grid-template-columns:minmax(350px,.82fr) minmax(690px,1.18fr)!important;
+  gap:52px!important;
+  align-items:center!important;
+  min-height:620px!important;
+}
+.mockCopy{
+  max-width:470px;
+}
+.mockCopy h1{
+  font-size:clamp(4.35rem,6.5vw,6.55rem)!important;
+  line-height:.9!important;
+  letter-spacing:-.065em!important;
+  color:var(--lux-navy)!important;
+  margin:22px 0 20px!important;
+}
+.mockCopy h1 span{
+  color:var(--lux-green)!important;
+}
+.mockCopy h3{
+  font-size:1.22rem!important;
+  line-height:1.38!important;
+  color:#173757!important;
+  margin-bottom:14px!important;
+  font-weight:700;
+}
+.mockCopy>p{
+  max-width:445px!important;
+  color:var(--lux-text)!important;
+  font-size:1.03rem!important;
+  line-height:1.72!important;
+}
+.licensedBadge{
+  background:#eef8f3!important;
+  color:#0c7e61!important;
+  border:1px solid #d7ece2!important;
+  padding:9px 15px!important;
+  font-size:.8rem!important;
+  letter-spacing:.01em;
+}
+.heroButtons{
+  margin-top:28px!important;
+  gap:14px!important;
+}
+.greenBtn,.outlineBtn{
+  min-height:54px;
+  padding:14px 22px!important;
+  border-radius:999px!important;
+  font-weight:800!important;
+}
+.outlineBtn{
+  background:rgba(255,255,255,.8)!important;
+  border:1px solid #dfe8f0!important;
+  color:var(--lux-navy)!important;
+  box-shadow:0 12px 28px rgba(17,46,84,.05);
+}
+.heroTrust{
+  gap:12px!important;
+  margin-top:22px!important;
+}
+.heroTrust span{
+  background:rgba(255,255,255,.68)!important;
+  border:1px solid #e9eff5!important;
+  border-radius:14px!important;
+  padding:10px 12px!important;
+  color:#4d6278!important;
+  box-shadow:0 10px 22px rgba(17,46,84,.04);
+}
+.mockProducts{
+  min-height:600px!important;
+  padding:0!important;
+}
+.approvedHeroVisual{
+  max-width:900px!important;
+  width:100%!important;
+  margin-inline:auto;
+  border-radius:34px;
+  background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(248,251,254,.95));
+  border:1px solid rgba(231,238,246,.95);
+  box-shadow:var(--lux-shadow);
+  padding:28px;
+  position:relative;
+  overflow:hidden;
+}
+.approvedHeroVisual:before{
+  content:"";
+  position:absolute;
+  inset:auto auto -20% -10%;
+  width:320px;
+  height:320px;
+  background:radial-gradient(circle,rgba(226,245,237,.75),transparent 68%);
+  pointer-events:none;
+}
+.approvedHeroVisual:after{
+  content:"";
+  position:absolute;
+  inset:-18% -10% auto auto;
+  width:280px;
+  height:280px;
+  background:radial-gradient(circle,rgba(225,236,250,.7),transparent 70%);
+  pointer-events:none;
+}
+.approvedHeroVisual img{
+  position:relative;
+  z-index:1;
+  width:100%!important;
+  max-width:860px!important;
+  max-height:640px!important;
+  object-fit:contain!important;
+  filter:drop-shadow(0 28px 38px rgba(18,50,89,.12))!important;
+}
+/* Lux minimal treatment cards */
+.homeTreatments{padding:34px 0 16px!important}
+.homeTreatmentGrid{gap:22px!important}
+.homeTreatmentCard{
+  border:1px solid var(--lux-border)!important;
+  border-radius:28px!important;
+  background:linear-gradient(180deg,#fff 0%,#fbfdff 100%)!important;
+  box-shadow:var(--lux-shadow-soft)!important;
+}
+.homeTreatmentCopy{padding:28px 28px 24px!important}
+.homeTreatmentCard h3{color:var(--lux-navy)!important}
+.homeTreatmentCard p,.homeTreatmentNote{color:var(--lux-text)!important}
+.homeTreatmentImage,.mensTreatmentArt,.minorTreatmentArt{border-radius:0 0 28px 28px!important;overflow:hidden}
+/* How it works refinement */
+.howPanelRefresh{
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%)!important;
+  border:1px solid var(--lux-border)!important;
+  border-radius:32px!important;
+  box-shadow:var(--lux-shadow-soft)!important;
+  padding:34px 34px 30px!important;
+}
+.journeyStep{
+  border-radius:26px!important;
+  border:1px solid var(--lux-border)!important;
+  box-shadow:0 14px 34px rgba(24,63,108,.05)!important;
+}
+.journeyArt{
+  border-radius:24px!important;
+  background:linear-gradient(180deg,#fbfdff 0%,#f1f6fb 100%)!important;
+}
+.createAccountSection{padding-top:52px!important}
+.createAccountCard{
+  border-radius:30px!important;
+  border:1px solid var(--lux-border)!important;
+  box-shadow:var(--lux-shadow)!important;
+}
+footer{background:#fbfdff!important;border-top:1px solid var(--lux-border)!important}
+
+@media(min-width:1400px){
+  .wrap{width:min(1380px,calc(100% - 72px))!important}
+  .mockGrid{grid-template-columns:minmax(360px,.8fr) minmax(760px,1.2fr)!important}
+  .approvedHeroVisual{max-width:980px!important;padding:34px}
+}
+@media(max-width:1200px){
+  .mockGrid{grid-template-columns:minmax(320px,.86fr) minmax(560px,1.14fr)!important;gap:36px!important;min-height:560px!important}
+  .mockCopy h1{font-size:clamp(3.8rem,6.2vw,5.4rem)!important}
+  .approvedHeroVisual{max-width:760px!important}
+}
+@media(max-width:1000px){
+  .wrap{width:min(100% - 34px,1120px)!important}
+  .mockHero{padding:42px 0 28px!important}
+  .mockGrid{grid-template-columns:1fr!important;gap:24px!important;min-height:0!important}
+  .mockCopy{max-width:680px;margin:0 auto;text-align:center}
+  .mockCopy>p,.mockCopy h3{margin-left:auto!important;margin-right:auto!important;max-width:620px!important}
+  .heroButtons,.heroTrust{justify-content:center!important}
+  .mockProducts{min-height:auto!important}
+  .approvedHeroVisual{max-width:840px!important;padding:24px}
+}
+@media(max-width:700px){
+  .wrap{width:min(100% - 24px,560px)!important}
+  .siteHeader{backdrop-filter:none!important}
+  .homeNav{height:74px!important}
+  .mockHero{padding:26px 0 14px!important}
+  .mockGrid{gap:18px!important}
+  .mockCopy h1{font-size:clamp(3.1rem,14vw,4rem)!important;max-width:340px!important}
+  .mockCopy h3{font-size:1rem!important;max-width:330px!important}
+  .mockCopy>p{font-size:.92rem!important;max-width:330px!important}
+  .heroButtons{grid-template-columns:1fr!important;max-width:320px!important;margin-top:18px!important}
+  .heroTrust{grid-template-columns:1fr!important;max-width:320px!important;gap:8px!important}
+  .heroTrust span{font-size:.74rem!important;padding:10px 12px!important}
+  .mockProducts{margin:0!important}
+  .approvedHeroVisual{max-width:100%!important;padding:16px;border-radius:24px!important}
+  .approvedHeroVisual img{max-width:100%!important;max-height:none!important}
+  .approvedHeroVisual:before,.approvedHeroVisual:after{display:none}
+  .homeTreatmentCopy{padding:22px 20px 18px!important}
+  .howPanelRefresh{padding:22px 14px 20px!important;border-radius:24px!important}
+  .createAccountCard{border-radius:24px!important}
+}
+
+.portalLoadingNotice{margin-top:8px}

@@ -1,0 +1,12 @@
+{
+  "change": "Homepage hero updated to provided pens/tablets image",
+  "missing_local_references": [],
+  "broken_internal_anchors": [],
+  "duplicate_ids_by_page": {},
+  "labels_without_programmatic_association": [],
+  "updated_files": [
+    "index.html",
+    "styles.css",
+    "medical-pens-and-tablets-hero.png"
+  ]
+}

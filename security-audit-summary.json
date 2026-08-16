@@ -1,0 +1,50 @@
+{
+  "scope": "latest RefyllRx luxury/minimal static frontend + connected Supabase authorization/storage controls",
+  "missing_local_references": [],
+  "broken_internal_anchors": [],
+  "duplicate_ids_by_page": {},
+  "inline_scripts": [],
+  "inline_style_attributes": [],
+  "unsafe_target_blank_links": [],
+  "javascript_module_syntax": {
+    "app.js": {
+      "ok": true,
+      "stderr": ""
+    },
+    "supabase-client.js": {
+      "ok": true,
+      "stderr": ""
+    },
+    "config.js": {
+      "ok": true,
+      "stderr": ""
+    },
+    "auth-callback.js": {
+      "ok": true,
+      "stderr": ""
+    },
+    "update-password.js": {
+      "ok": true,
+      "stderr": ""
+    }
+  },
+  "code_checks": {
+    "service_role_key_present": false,
+    "eval_present": false,
+    "new_function_present": false,
+    "document_write_present": false,
+    "local_storage_session_present": true
+  },
+  "security_headers_file": true,
+  "residual_findings": [
+    "professional MFA not enforced",
+    "admin/clinical role separation before clinical writes",
+    "OAuth onboarding completeness",
+    "browser-held localStorage/implicit OAuth sessions",
+    "uploaded-document malware screening",
+    "enable Supabase leaked-password protection",
+    "intentional SECURITY DEFINER RPC advisor warning"
+  ],
+  "database_hardening_applied": true,
+  "legacy_assessments_browser_writes_frozen": true
+}

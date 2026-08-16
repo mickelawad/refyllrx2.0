@@ -1,0 +1,11 @@
+{
+  "change": "Homepage styled larger, more premium, luxurious and minimal",
+  "missing_local_references": [],
+  "broken_internal_anchors": [],
+  "duplicate_ids_by_page": {},
+  "labels_without_programmatic_association": [],
+  "updated_files": [
+    "styles.css",
+    "index.html"
+  ]
+}
